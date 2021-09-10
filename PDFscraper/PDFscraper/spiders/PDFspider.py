@@ -19,4 +19,3 @@ class PDFSpider(scrapy.Spider):
                     endLink = hrefLink.split("=")[-1]
                     print("end result: " + endLink)
 
-
