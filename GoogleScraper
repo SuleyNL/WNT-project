@@ -1,0 +1,218 @@
+#pip install google-api-python-client google-auth-httplib2 google-auth-oauthlib
+#pip install googlesearch-python
+import time
+from googlesearch import search
+import mysql.connector
+import scrapy
+from scrapy.crawler import CrawlerProcess
+from io import StringIO
+from functools import partial
+from scrapy.http import Request
+from scrapy.spiders import Spider
+from scrapy.selector import Selector
+from scrapy.spiders import CrawlSpider, Rule
+from scrapy.linkextractors import LinkExtractor
+from scrapy.item import Item
+import pandas as pd
+from pandas import DataFrame
+import urllib3.request
+import pdfkit as pdf
+from jinja2 import Environment, FileSystemLoader
+from scrapy.pipelines.files import FilesPipeline
+import pdfkit
+from selenium import webdriver
+
+
+def createDatabase():
+    mydb = mysql.connector.connect(host="localhost",user="Suley",password="Hell0")
+    print("my database: " + mydb)
+
+def findWebsites():
+    with open('input.txt') as input:
+        inputLines = input.readlines()
+        with open("output.txt") as output:
+            outputLines = output.readlines()
+            lastOutputLine = outputLines[-1].split(":")[0]
+
+        i = int(lastOutputLine) + 1
+
+        while i < len(inputLines):
+            print("___________________________________________________")
+            g = open("output.txt", "a")
+            text = str(i) + ": " + inputLines[i].replace(",\n", "") + ": " + search(inputLines[i].replace(",", "") + " nederland site")[0]+",\n"
+            g.write(text)
+            g.close()
+            print(text)
+            time.sleep(20)
+            #on 10 seconds it did 80
+            print("Total lines this session:" + str(i-int(lastOutputLine)))
+            print(str(round((i/1899)*100, 2)) + "% done")
+            i=i+1
+
+
+
+
+def useSpider():
+    name = "posts1"
+    process = CrawlerProcess()
+    process.crawl(WNT_Spider)
+    process.start()
+
+
+class WNT_Spider( CrawlSpider ):
+    name = 'WNT_spider'
+    #allowed_domains = ['coc.nl']
+    #start_urls = ['https://coc.nl']
+    allowed_domains = ['suleymen-kandrouch-cv.web.app']
+    start_urls = ['https://suleymen-kandrouch-cv.web.app/']
+    rules = [Rule(LinkExtractor(), callback='parse_front', follow=True)]
+
+    def parse_front(self, response):
+        print("processing:"+response.url)
+        print("dit zijn de links: " + response.css('href').getall())
+        '''
+        res = response.xpath('//*[contains(., "Jaarrekening")]')
+        w_links0 = res.xpath('./a/@href')
+
+        res = response.xpath('//*[contains(., "Jaarstukken")]')
+        w_links = res.xpath('./a/@href')
+
+        res = response.xpath('//*[contains(., "jaarverslag")]')
+        w_links1 = res.xpath('./a/@href')
+
+        res = response.xpath('//*[contains(., "Jaarverslag")]')
+        w_links2 = res.xpath('./a/@href')
+
+        res = response.xpath('//*[contains(., "jaarstukken")]')
+        w_links3 = res.xpath('./a/@href')
+
+        res = response.xpath('//*[contains(., "jaarrekening")]')
+        w_links4 = res.xpath('./a/@href')
+
+        res = response.xpath('//*[contains(., "Financieel verslaggevingsdocument")]')
+        w_links5 = res.xpath('./a/@href')
+
+        res = response.xpath('//*[contains(., "financieel verslaggevingsdocument")]')
+        w_links6 = res.xpath('./a/@href')
+
+        res = response.xpath('//*[contains(., "WNT-verantwoording")]')
+        w_links7 = res.xpath('./a/@href')
+
+        res = response.xpath('//*[contains(., "WNT verantwoording")]')
+        w_links8 = res.xpath('./a/@href')
+
+        res = response.xpath('//*[contains(., "uley")]')
+        w_links9 = res.xpath('./a/@href')
+
+        links_to_follow0 = w_links0.extract()
+        links_to_follow = w_links.extract()
+        links_to_follow1 = w_links1.extract()
+        links_to_follow2 = w_links2.extract()
+        links_to_follow3 = w_links3.extract()
+        links_to_follow4 = w_links4.extract()
+        links_to_follow5 = w_links5.extract()
+        links_to_follow6 = w_links6.extract()
+        links_to_follow7 = w_links7.extract()
+        links_to_follow8 = w_links8.extract()
+        links_to_follow9 = w_links9.extract()
+
+        for url in links_to_follow0:
+            yield response.follow(url=url, callback=self.parse_pages)
+            print("processing:"+url)
+        for url in links_to_follow:
+            yield response.follow(url = url, callback = self.parse_pages)
+            print("processing:"+url)
+        for url in links_to_follow1:
+            yield response.follow(url = url, callback = self.parse_pages)
+            print("processing:"+url)
+        for url in links_to_follow2:
+            yield response.follow(url = url, callback = self.parse_pages)
+            print("processing:"+url)
+        for url in links_to_follow3:
+            yield response.follow(url = url, callback = self.parse_pages)
+            print("processing:"+url)
+        for url in links_to_follow4:
+            yield response.follow(url = url, callback = self.parse_pages)
+            print("processing:"+url)
+        for url in links_to_follow5:
+            yield response.follow(url = url, callback = self.parse_pages)
+            print("processing:"+url)
+        for url in links_to_follow6:
+            yield response.follow(url = url, callback = self.parse_pages)
+            print("processing:"+url)
+        for url in links_to_follow7:
+            yield response.follow(url = url, callback = self.parse_pages)
+            print("processing:"+url)
+        for url in links_to_follow8:
+            yield response.follow(url=url, callback=self.parse_pages)
+            print("processing:" + url)
+        for url in links_to_follow9:
+            yield response.follow(url = url, callback = self.parse_pages)
+            print("processing:"+url)
+        '''
+    def parse_pages(self, response): #here added url
+        ws_title = response.url
+        ws_descr = response.body
+        dc_dict[ws_title] = ws_descr
+
+# Initialize the dictionary **outside** of the Spider class
+dc_dict = dict()
+
+def selenium():
+    # start web browser
+    browser = webdriver.Chrome()
+
+    # get source code
+    browser.get("https://www.coc.nl/over-ons/jaarverslag")
+    html = browser.page_source
+    time.sleep(2)
+    allLinks = browser.find_elements_by_css_selector('a')
+
+    i=1
+    for link in allLinks:
+        print(str(i) + ". : " + link.text + ": " + str(link.get_attribute("href")))
+        i = i+1
+
+    #for i, element in allLinks:
+    #    print(allLinks[i].get_attribute("href" + "\n"))
+
+    # close web browser
+    browser.close()
+
+def test():
+    print("Searchin for: \"2019\" \"Brabantse Ontwikkelings Maatschappij Holding B.V.\" jaarverslag OR jaarrekening OR wnt-verantwoording OR verslaggevingsdocument OR jaarstuk -dnb.com -almanak.overheid.nl filetype:pdf")
+    test = search("Brabantse Ontwikkelings Maatschappij Holding B.V. (inurl:2019) AND (Jaarverslag|Jaarrekening|WNT-verantwoording|Verslaggevingsdocument|Jaarstuk) -dnb.com -almanak.overheid.nl filetype:pdf")
+    #print(test)
+    i=0
+    for item in test:
+        i = i +1
+        print(str(i) + ": " + item)
+
+def tellen():
+    begin = int(input("vanaf welk getal moet ik beginnen met tellen Roumaissa? \n"))
+    eind = int(input("tot welk getal moet ik eindigen met tellen Roumaissa? \n"))
+    snelheid= int(input("Hoe vaak moet ik tellen per seconde?\n" ))
+
+    while eind < begin:
+        eind = eind + 1
+        print(str(begin-eind))
+        time.sleep(1/snelheid)
+
+    print("KLAAARRRR")
+
+
+if __name__ == "__main__":
+    '''    
+    process = CrawlerProcess()
+    process.crawl(WNT_Spider)
+    process.start()
+    '''
+
+    #selenium()
+    #findWebsites()
+
+    #useSpider()
+
+    #test()
+    tellen()
+
