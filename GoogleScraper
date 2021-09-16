@@ -49,14 +49,13 @@ def getURLs(year):
         inputLines = inputFile.readlines()
 
         # check if there is already some output so it can continue from there
-        with open(outputFile, "a+") as output:
-            outputLines = output.readlines()
+        with open(outputFile, "r") as output:
             i = 0
-            lastOutputLine = 0
+            outputLines = output.readlines()
             if len(outputLines) > 0:
-                lastOutputLine = outputLines[-1].split(":")[0]
-                i = int(lastOutputLine) + 1
-
+                i = int(outputLines[-1].split(":")[0].replace("\n", "")) + 1
+            lastOutputLine = i
+        print("i = " + str(i))
         # for every line in inputFile it outputs a line in outputFile
         while i < len(inputLines):
             print("___________________________________________________")
@@ -85,7 +84,7 @@ def getURLs(year):
                 i = i+1
 
             # if we get blocked by google, wait 2hrs20mins to get unblocked
-            except requests.HTTPError as exception:
+            except requests.HTTPError:
                 print("Too many requests. Waiting 2hrs and 20min for next batch")
                 nextBatchTime = datetime.now() + timedelta(hours=2.34)
                 print("Next batch scheduled at: " + format(nextBatchTime, '%H:%M:%S'))
@@ -126,6 +125,19 @@ def clean(name):
     return name
 
 
+def test():
+    with open("PDFs-List/PDFs-List-2020.txt", "r") as output:
+        outputLines = []
+        outputLines = output.readlines()[0].split(": ")
+        outputLines.remove(outputLines[0])
+        outputLines = ":".join(outputLines).replace("\n", "").split(", ")
+        print(outputLines)
+
+
+
+
+
 if __name__ == "__main__":
     getURLs(2020)
 
+    #test()
