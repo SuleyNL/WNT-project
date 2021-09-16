@@ -6,6 +6,8 @@ import mysql.connector
 import requests
 import bs4 as bs
 import urllib
+from datetime import datetime, timedelta
+
 import scrapy
 from scrapy.crawler import CrawlerProcess
 from io import StringIO
@@ -62,7 +64,7 @@ def createDatabase():
     print("my database: " + mydb)
 
 
-def scrapeGoogleForPDFs(year):
+def getURLs(year):
 
     # determine file
     outputFile = "PDFs-List/PDFs-List-%s.txt" % year
@@ -90,32 +92,36 @@ def scrapeGoogleForPDFs(year):
             # try except block to catch the error that occurs when we get blocked by google
             try:
                 foundPDFs = searchGoogle(year, inputLines[i].replace("\n", ""))
+                # proper formatting = [number]: [link1], [link2], [link3] \n
+                text = str(i) + ":"
+                for PDF in foundPDFs:
+                    if foundPDFs.index(PDF) != 0:
+                        text = text + ","
+                    text = text + " " + PDF
+                text = text + "\n"
+
+                # write text to file
+                g.write(text)
+                g.close()
+                print(text)
+
+                # freeze program so we wont get banned by google
+                # on 10 seconds it did 80
+                # on 20 seconds it did 64
+                #time.sleep()
+
+                # show progress on screen
+                print(str(round((i/len(inputLines))*100, 2)) + "% Completed!")
+                print("Total lines this session: " + str(i-int(lastOutputLine)))
+                i = i+1
+
             except requests.HTTPError as exception:
-                print("oepsie doepsie  " + str(exception))
-                break
+                print("Too many requests. Waiting 2hrs and 20min for next batch")
+                nextBatchTime = datetime.now() + timedelta(hours=2.34)
+                print("Next batch scheduled at: " + format(nextBatchTime, '%H:%M:%S'))
+                time.sleep(60*60*2.34)
 
-            # proper formatting = [number]: [link1], [link2], [link3] \n
-            text = str(i) + ":"
-            for PDF in foundPDFs:
-                if foundPDFs.index(PDF) != 0:
-                    text = text + ","
-                text = text + " " + PDF
-            text = text + "\n"
 
-            # write text to file
-            g.write(text)
-            g.close()
-            print(text)
-
-            # freeze program so we wont get banned by google
-            # on 10 seconds it did 80
-            # on 20 seconds it did 64
-            time.sleep(20)
-
-            # show progress on screen
-            print(str(round((i/len(inputLines))*100, 2)) + "% Completed!")
-            print("Total lines this session: " + str(i-int(lastOutputLine)))
-            i = i+1
 
 
 def searchGoogle(year, name):
@@ -196,7 +202,7 @@ def test():
     content = page.find_all("a::attr(href)")
 
     for url in page.find_all('a'):
-        print(url.get('href')) 
+        print(url.get('href'))
 
     linksList = []
     for i, item in enumerate(content):
@@ -214,6 +220,6 @@ if __name__ == "__main__":
 
     #print(searchGoogle(2018, "Brabantse Ontwikkelings Maatschappij Holding B.V."))
 
-    #scrapeGoogleForPDFs(2020)
+    getURLs(2020)
 
-    test()
+    #test()
