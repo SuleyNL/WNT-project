@@ -105,11 +105,6 @@ def getURLs(year):
                 g.close()
                 print(text)
 
-                # freeze program so we wont get banned by google
-                # on 10 seconds it did 80
-                # on 20 seconds it did 64
-                #time.sleep()
-
                 # show progress on screen
                 print(str(round((i/len(inputLines))*100, 2)) + "% Completed!")
                 print("Total lines this session: " + str(i-int(lastOutputLine)))
@@ -202,7 +197,7 @@ def test():
     content = page.find_all("a::attr(href)")
 
     for url in page.find_all('a'):
-        print(url.get('href'))
+        print(url.get('href')) 
 
     linksList = []
     for i, item in enumerate(content):
@@ -222,4 +217,4 @@ if __name__ == "__main__":
 
     getURLs(2020)
 
-    #test()
+    test()
