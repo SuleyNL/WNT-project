@@ -111,7 +111,7 @@ def searchGoogle(year, name):
 
 def clean(name):
     # some organisations (#163) had their names double, so here that gets cleaned up.
-    # the only risk with this approach is if the organisation name is symmetrical and even like 'grootoorg'.
+    # the only risk with this approach is if the organisation name is symmetrical like 'grootoorg'.
     # in that case we probably should search both the half and the full name
     middleNumber = round(len(name) / 2)
 
