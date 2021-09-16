@@ -5,15 +5,19 @@ from PyPDF2 import PdfFileReader, PdfFileWriter
 from pathlib import Path
 import pikepdf
 from pdfminer.pdfpage import PDFPage
+from reportlab.pdfgen.canvas import Canvas
 
 def startProcess(year):
+    global isError
+    isError = False
+
     iteration = getIteration(year)
     organisation = getOrganisation(iteration)
     url = getUrl(iteration, year)
     pageNumber = 0
     if isFileDownloaded(url):
         pageNumber = getPageNumber()
-    generateFile(pageNumber, year, organisation, iteration)
+    generateFile(pageNumber, year, organisation, iteration, url)
     return "------[THE END]------"
 
 
@@ -68,23 +72,32 @@ def getPageNumber():
     pdf = PdfFileReader("WorkingMemory/currentFile.pdf")
     totalScore = []
 
-    '''
-        if pdf.isEncrypted:
-            try:
+    if pdf.isEncrypted:
+        try:
             pdf1 = pikepdf.open(pdf.pages)
             pdf.save(pdf1)
             #pdf = pdf.decrypt('')
         except NotImplementedError:
             print("errortje")
             # https://smallpdf.com/unlock-pdf
-    '''
 
     while pageNumber < pdf.getNumPages():
-        page = pdf.getPage(pageNumber).extractText().split()
+        page = pdf.getPage(pageNumber).extractText().split(" ")
+
+        if pageNumber == 6:
+            print(str(page))
 
         relevanceScore = page.count("bezoldiging") + page.count("Bezoldiging") + page.count("BEZOLDIGING") + page.count("WNT")
         totalScore.append(relevanceScore)
+        print(page.count("WNT"))
+
         pageNumber += 1
+
+
+    # if there are no results for searchterm, activate error
+    if sum(totalScore) == 0:
+        print(totalScore)
+        errorhandler("noresults")
 
     # Find the page number with the highest value
     pageNumber = totalScore.index(max(totalScore))
@@ -92,23 +105,51 @@ def getPageNumber():
     return pageNumber
 
 
-def generateFile(pageNumber, year, organisation, iteration):
+def errorhandler(errorText):
+    global isError
+    global error
+    error = errorText
+    if isError:
+        isError = False
+    else:
+        isError = True
 
-    bigPDF = PdfFileReader("WorkingMemory/currentFile.pdf")
-    pdf_writer = PdfFileWriter()
 
-    for page in bigPDF.pages[pageNumber-1:pageNumber+2]:
-        pdf_writer.addPage(page)
+def generateFile(pageNumber, year, organisation, iteration, url):
+    global isError
+    global error
+    if not isError:
+        pages_to_keep = [pageNumber-1, pageNumber, pageNumber+1, pageNumber+2]
+        infile = PdfFileReader("WorkingMemory/currentFile.pdf", 'rb')
+        output = PdfFileWriter()
 
-    path = Path("PDFs/{0}/{1}/".format(year, organisation))
-    path.mkdir(parents=True, exist_ok=True)
-    print(path)
-    path = Path(str(path) + "/{0}.pdf".format(iteration[1]))
-    print(path)
-    with path.open(mode="wb+") as output_file:
-        pdf_writer.write(output_file)
+        for i in pages_to_keep:
+            p = infile.getPage(i)
+            output.addPage(p)
 
-    return ""
+        # create path
+        newPath = Path("PDFs/{0}/{1}/".format(year, organisation))
+        newPath.mkdir(parents=True, exist_ok=True)
+        # create file
+        newFile = Path(str(newPath) + "/{0}.pdf".format(iteration[1]))
+        with open(newFile, 'wb') as f:
+            output.write(f)
+    else:
+        # create path
+        newPath = Path("PDFs/{0}/{1}/".format(year, organisation))
+        newPath.mkdir(parents=True, exist_ok=True)
+
+        # create special error file
+        newFile = str(newPath) + "/{0}.{1}.pdf".format(iteration[1], error)
+        canvas = Canvas(newFile)
+        canvas.drawString(5, 800, "Organisatie: ")
+        canvas.drawString(5, 780, organisation)
+        canvas.drawString(5, 740, "Link: ")
+        canvas.drawString(5, 720, url)
+        rect = Canvas.rect(canvas, 20, 700, 400, 20, 0)
+        canvas.linkURL(url, rect)
+        canvas.setFont("Helvetica", 15)
+        canvas.save()
 
 
 if __name__ == '__main__':
