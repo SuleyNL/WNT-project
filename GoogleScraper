@@ -45,7 +45,7 @@ def getURLs(year):
     print(outputFile)
 
     # open inputFile
-    with open('WNT-List.txt') as inputFile:
+    with open('Extra/WNT-List.txt') as inputFile:
         inputLines = inputFile.readlines()
 
         # check if there is already some output so it can continue from there

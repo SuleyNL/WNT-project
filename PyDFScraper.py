@@ -49,7 +49,7 @@ def getIteration(year):
 
 
 def getOrganisationAmount():
-    with open("WNT-List.txt") as f:
+    with open("Extra/WNT-List.txt") as f:
         file = f.readlines()
         amountOfOrganisations = len(file)
 
@@ -57,7 +57,7 @@ def getOrganisationAmount():
 
 
 def getOrganisation(iteration):
-    with open("WNT-List.txt") as f:
+    with open("Extra/WNT-List.txt") as f:
         file = f.readlines()
         organisation = file[iteration[0]].replace("\n", "")
         amountOfOrganisations = len(file)
