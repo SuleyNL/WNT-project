@@ -1,0 +1,8 @@
+Amount of pdfs saved as noresults also actually have no results:
+30/44 = 68%
+35 organisations = 105 documents = 44 noresults pages of which 30 really have no results
+
+
+Amount of pdfs saved as EOF actually have no results:
+3/5 = 60%
+35 organisations = 105 documents = 5 EOFs of which 3 have no results
