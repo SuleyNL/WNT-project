@@ -6,7 +6,7 @@ from googlesearch import search
 import requests
 from datetime import datetime, timedelta
 from selenium import webdriver
-
+from math import floor
 def downloadWNTList():
     # start web browser
     browser = webdriver.Chrome()
@@ -43,14 +43,13 @@ def getURLs(year):
     # determine file
     outputFile = "PDFs-List/PDFs-List-%s.txt" % year
     print(outputFile)
-
+    i = 0
     # open inputFile
     with open('Extra/WNT-List.txt') as inputFile:
         inputLines = inputFile.readlines()
 
         # check if there is already some output so it can continue from there
         with open(outputFile, "r") as output:
-            i = 0
             outputLines = output.readlines()
             if len(outputLines) > 0:
                 i = int(outputLines[-1].split(":")[0].replace("\n", "")) + 1
@@ -82,6 +81,7 @@ def getURLs(year):
                 print(str(round((i/len(inputLines))*100, 2)) + "% Completed!")
                 print("Total lines this session: " + str(i-int(lastOutputLine)))
                 i = i+1
+                print("Total batches this session: " + str(floor((i-int(lastOutputLine))/116)))
 
             # if we get blocked by google, wait 2hrs20mins to get unblocked
             except requests.HTTPError:
@@ -89,6 +89,7 @@ def getURLs(year):
                 nextBatchTime = datetime.now() + timedelta(hours=2.34)
                 print("Next batch scheduled at: " + format(nextBatchTime, '%H:%M:%S'))
                 time.sleep(60*60*2.34)
+    print(str(round((i / len(inputLines)) * 100, 2)) + "% Completed!")
     print("[---------------------- THE END ------------------------]")
 
 
