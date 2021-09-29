@@ -7,29 +7,37 @@ Amount of pdfs saved as EOF actually have no results:
 3/5 = 60%
 35 organisations = 105 documents = 5 EOFs of which 3 have no results
 
+
+Amount of organisations without any pdf at all:
+10/40 = 25%
+40 organisations, 10 dont have anything
+
+Even some organisations that are labeled as results, may have no real results because they only used the relevant word once
+
 Only download all pages if its needed
-Stackoverflow account maken, vragen stellen, wat heb ik al gedaan
-output van programma kan in excel sheet
-
-analyseren, ontwerpen, realiseren
-stageplan: paginanummering en hoofdstuk nummering 1.0 1.2 2.0 2.3 2.6 etc
-
-IDE, Python, Outlook, Liever wel ipv niet erbij
-
-Stageplan stageverslag productverslag etc. erin
+Stackoverflow account maken, vragen stellen, laten zien wat ik al heb gedaan
+output van programma kan gewoon in excel sheet
 
 IT coordinator:
-applicaties en hardware nodig. managed laptop HP 
-
+applicaties heb ik nodig
 chitra 
 paulina 
 janette van puffelen 
 nicole de krijger
 
-
 Aangeven wanneer iets vermoedelijk encrypted is
-het echte pdf opslaan
+"het echte pdf opslaan"
 digidoc linksonderin werkomgeving
 Datum en tijd van website vastleggen
+accountantverklaring erbij
 
 Robert Taal voor aanvraag toestemming BZK
+
+Beste Ministerie van Binnenlandse Zaken,
+Op 29 september 2021 om 14:38 werdt er een document gevonden van de organisatie 'Cliëntenbelang Amsterdam' Volgens
+de google zoekterm: "2020 Cliëntenbelang Amsterdam (Jaarverslag|Jaarrekening|WNT-verantwoording|Verslaggevingsdocument|Jaarstuk)
+-dnb.com -almanak.overheid.nl filetype:pdf", het desbetreffende document was hierbij de 3e zoekresultaat. Dit document
+bevat geen van de volgende termen: "bezoldiging", "Bezoldiging", "WNT", "bezoldigingsmaximum", "Wet Normering". Om deze
+rede wordt dit document geclassificeerd als:
+
+Geen resultaten

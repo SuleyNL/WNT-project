@@ -68,7 +68,7 @@ def getURLs(year):
             g = open(outputFile, "a")
             foundPDFs = []
 
-            # try except block to catch the error that occurs when we get blocked by google
+            # try except block to catch the report that occurs when we get blocked by google
             try:
                 foundPDFs = searchGoogle(year, inputLines[i].replace("\n", ""))
                 # proper formatting = [number]: [link1], [link2], [link3] \n
