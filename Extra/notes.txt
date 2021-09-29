@@ -6,3 +6,30 @@ Amount of pdfs saved as noresults also actually have no results:
 Amount of pdfs saved as EOF actually have no results:
 3/5 = 60%
 35 organisations = 105 documents = 5 EOFs of which 3 have no results
+
+Only download all pages if its needed
+Stackoverflow account maken, vragen stellen, wat heb ik al gedaan
+output van programma kan in excel sheet
+
+analyseren, ontwerpen, realiseren
+stageplan: paginanummering en hoofdstuk nummering 1.0 1.2 2.0 2.3 2.6 etc
+
+IDE, Python, Outlook, Liever wel ipv niet erbij
+
+Stageplan stageverslag productverslag etc. erin
+
+IT coordinator:
+applicaties en hardware nodig. managed laptop HP 
+
+chitra 
+paulina 
+janette van puffelen 
+nicole de krijger
+
+
+Aangeven wanneer iets vermoedelijk encrypted is
+het echte pdf opslaan
+digidoc linksonderin werkomgeving
+Datum en tijd van website vastleggen
+
+Robert Taal voor aanvraag toestemming BZK

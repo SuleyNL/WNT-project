@@ -7,7 +7,11 @@ import requests
 from datetime import datetime, timedelta
 from selenium import webdriver
 from math import floor
+import Extra
+
 def downloadWNTList():
+    organisationList = []
+
     # start web browser
     browser = webdriver.Chrome()
 
@@ -27,12 +31,15 @@ def downloadWNTList():
             name = table[i].find_elements_by_css_selector('td')[0].text.replace("\n", "")
             organisation = clean(name) + "\n"
 
-            # write to file
-            g = open("WNT-List.txt", "a")
-            g.write(organisation)
-            print(organisation)
-            g.close()
+            organisationList.append(organisation)
         i = i + 1
+
+    # Loop is over, write list to file
+    g = open("Extra/WNT-List.txt", "w+")
+    for organisation in organisationList:
+        g.write(organisation)
+        print(organisation)
+    g.close()
 
     # close web browser
     browser.close()
@@ -109,24 +116,34 @@ def searchGoogle(year, name):
     return searchResults[0:3]
 
 
-def clean(name):
+def clean(organisationName):
     # some organisations (#163) had their names double, so here that gets cleaned up.
-    # the only risk with this approach is if the organisation name is symmetrical like 'grootoorg'.
-    # in that case we should googlesearch both the half and the full name
+    # the only risk with this approach is if the organisation organisationName is symmetrical like 'grootoorg'.
+    # in that case we should googlesearch both the half and the full organisationName
     # estimated risk chance is < 0.1%
-    middleNumber = round(len(name) / 2)
+    middleNumber = round(len(organisationName) / 2)
 
-    # determine both halves of the organisation name
-    left = name[0:middleNumber]
-    right = name[middleNumber:-1] + name[-1]
+    # determine both halves of the organisation organisationName
+    left = organisationName[0:middleNumber]
+    right = organisationName[middleNumber:-1] + organisationName[-1]
 
     # see if both halves are the same, if yes: take the left half
     if left == right:
-        name = left
+        organisationName = left
 
-    return name
+    # Some organisations have a colon in their organisationName
+    # Windows doesnt accept this as a valid filename
+    # You can either replace it with this "꞉"
+    # Or you can replace it with something else entirely like in the code below
+    afko = "afgekort: "
+    if afko in organisationName:
+        organisationName = organisationName.replace(afko, "(")
+        organisationName += ")"
+
+    return organisationName
 
 
 if __name__ == "__main__":
-    getURLs(2020)
+    #getURLs(2020)
+    downloadWNTList()
 

@@ -1,12 +1,14 @@
 import os
 import math
 import requests
+import time
 import PyPDF2
 from PyPDF2 import PdfFileReader, PdfFileWriter, utils
 from pathlib import Path
 import pikepdf
 from pdfminer.pdfpage import PDFPage
 from reportlab.pdfgen.canvas import Canvas
+
 
 def startProcess(year):
     global isError
@@ -15,6 +17,7 @@ def startProcess(year):
     iteration = getIteration(year)
 
     while iteration[0] < organisationAmount:
+
         isError = False
 
         iteration = getIteration(year)
@@ -29,7 +32,9 @@ def startProcess(year):
                 errorhandler(e)
 
         generateFile(pageNumber, year, organisation, iteration, url)
-
+        # Connection error if you let it go on immediately
+        print("waiting 5 minutes")
+        time.sleep(60 * 5)
     return "------[THE END]------"
 
 
@@ -86,11 +91,12 @@ def getUrl(coordinates, year):
 def isFileDownloaded(url):
 
     headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36"}
+
     try:
         response = requests.get(url, headers=headers)
     except requests.exceptions.ConnectionError:
         isFileDownloaded(url)
-        print("try again")
+        print("trying again")
     path = Path("WorkingMemory")
     path.mkdir(parents=True, exist_ok=True)
 
@@ -112,6 +118,7 @@ def getPageNumber():
         except NotImplementedError:
             print("errortje")
             # https://smallpdf.com/unlock-pdf is an alternate method for decryption
+            # OCR is another alternative
 
     totalScore = []
 
@@ -171,7 +178,8 @@ def generateFile(pageNumber, year, organisation, iteration, url):
         with open(newFile, 'wb') as f:
             output.write(f)
     else:
-        # create path
+        # create path to store PDF's in
+        print(organisation)
         newPath = Path("PDFs/{0}/{1}/".format(year, organisation))
         newPath.mkdir(parents=True, exist_ok=True)
 
