@@ -9,7 +9,9 @@ from selenium import webdriver
 from math import floor
 import Extra
 
+
 def downloadWNTList():
+    # It takes exactly 1 minute to download all the organisation names
     organisationList = []
 
     # start web browser
@@ -139,6 +141,15 @@ def clean(organisationName):
     if afko in organisationName:
         organisationName = organisationName.replace(afko, "(")
         organisationName += ")"
+
+    # Some organisations also have a slash (/) in their name like number 60: Collectief Alblasserwaard/Vijfheerenlanden Coöperatieve U.A.
+    # This breaks the code further down in the mapping system because it sees a slash (/) as a file in a directory
+    # A solution to this would be to simply remove the slash or replace it for a unicode that looks like it
+    # I chose to replace it for a backward slash (\), didnt work, windows also treats that as a file in a directory
+    # Decided to replace it for the word "and"
+    dash = "/"
+    if dash in organisationName:
+        organisationName = organisationName.replace(dash, " en ")
 
     return organisationName
 

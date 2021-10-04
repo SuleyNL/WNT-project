@@ -57,7 +57,7 @@ Centraal Bureau voor de Statistiek (CBS)
 Centraal Nautisch Beheer Noordzeekanaalgebied CNB
 Centraal Orgaan opvang asielzoekers (COA)
 Cliëntenbelang Amsterdam
-Collectief Alblasserwaard/Vijfheerenlanden Coöperatieve U.A.
+Collectief Alblasserwaard en Vijfheerenlanden Coöperatieve U.A.
 Collectief Eemland
 Collectief Groningen West
 College voor de toelating van gewasbeschermingsmiddelen en biociden
@@ -567,7 +567,7 @@ GR Bleizo
 GR Cocensus
 GR KDB Gemeenschappelijke Regeling Werkvoorzieningschap Kust , duin en Bollenstreek
 GR Veiligheidsregio Hollands Midden
-Grensoverschrijdend Openbaar Lichaam Welzijn Assende/Terneuzen
+Grensoverschrijdend Openbaar Lichaam Welzijn Assende en Terneuzen
 Groenalliantie Midden-Holland en omstreken
 Groengebied Amstelland
 Grondbank RZG Zuidplas
@@ -788,7 +788,7 @@ Sallcon, sociale werkvoorziening
 Samenwerking A2 gemeenten
 Samenwerking De Liemers
 Samenwerkingsorgaan Holland Rijnland
-Samenwerkingsorganisatie De Wolden/Hoogeveen
+Samenwerkingsorganisatie De Wolden en Hoogeveen
 Samenwerkingsorganisatie Publiek Vervoer Groningen Drenthe
 Samenwerkingsverband Collectief Vervoer Zeeuwsch-Vlaanderen
 Samenwerkingsverband Noord Oost Groningen SANOG
@@ -814,7 +814,7 @@ Sportcentrum Rozengaarde B.V.
 Sportfondsen Kampen B.V.
 Sportstichting Sittard-Geleen
 Sportstichting Strijen
-St. Openbare Bibliotheek Maassluis/Midden-Delfland
+St. Openbare Bibliotheek Maassluis en Midden-Delfland
 Staatsbosbeheer
 Stadsbank Oost Nederland
 Stadsgewest 's-Hertogenbosch
@@ -959,7 +959,7 @@ Stichting Centraal Museum
 Stichting Centraal Orgaan voor Kwaliteitsaangelegenheden in de Zuivel
 Stichting Centraal Orgaan Voorraadvorming Aardolieproducten
 Stichting Centram
-Stichting Centrum 16/22
+Stichting Centrum 16 en 22
 Stichting Centrum Beeldende Kunst
 Stichting Centrum Beeldende Kunst Zuidoost (CBK Zuidoost)
 Stichting Centrum Internationale Kinderontvoering
@@ -1263,7 +1263,7 @@ Stichting Maatschappelijke Dienstverlening Amsterdam Zuidoost en Diemen
 Stichting Maatschappelijke Dienstverlening Enschede-Haaksbergen
 Stichting Maatschappelijke Dienstverlening Flevoland
 Stichting Maatschappelijke Dienstverlening Rijnmond Plus
-Stichting Maatschappelijke Dienstverlening Zaanstreek/Waterland
+Stichting Maatschappelijke Dienstverlening Zaanstreek en Waterland
 Stichting Maatschappelijke Onderneming Smallingerland
 Stichting Maatvast Haarlemmermeer
 Stichting Malkander
@@ -1367,7 +1367,7 @@ Stichting Openbare Bibliotheek Almere
 Stichting Openbare Bibliotheek Amsterdam
 Stichting Openbare Bibliotheek Assen
 Stichting Openbare Bibliotheek Barneveld
-Stichting Openbare Bibliotheek Dalfsen/Nieuwleusen
+Stichting Openbare Bibliotheek Dalfsen en Nieuwleusen
 Stichting openbare bibliotheek 'De Boekenberg'
 Stichting Openbare Bibliotheek Eindhoven
 Stichting Openbare Bibliotheek Gouda
@@ -1638,7 +1638,7 @@ Stichting VluchtelingenWerk West en Midden-Nederland
 Stichting VluchtelingenWerk Zuid-Nederland
 Stichting VluchtelingenWerk Zuidwest-Nederland
 Stichting Voedingscentrum Nederland
-Stichting voor het Beheer van de Accomodatie Muziekgebouw/Bimhuis
+Stichting voor het Beheer van de Accomodatie Muziekgebouw en Bimhuis
 Stichting voor Kennis en Sociale Cohesie
 Stichting VÓÓR Welzijn
 Stichting voor Welzijn, Zorg, Sociaal en Cultureel Werk Beuningen
@@ -1671,7 +1671,7 @@ Stichting Waterproef
 Stichting Weerribben-Wieden
 Stichting Weerwerk Groningen
 Stichting Wel.kom - Roermond
-Stichting Wel.kom - Venlo/Beesel
+Stichting Wel.kom - Venlo en Beesel
 Stichting Welnúh (Welzijn Utrechtse Heuvelrug)
 Stichting Welsun Landgraaf
 Stichting Welzijn

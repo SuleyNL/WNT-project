@@ -41,3 +41,31 @@ bevat geen van de volgende termen: "bezoldiging", "Bezoldiging", "WNT", "bezoldi
 rede wordt dit document geclassificeerd als:
 
 Geen resultaten
+
+
+ENCRYPTED:
+1, 2, and 3 of #60: Collectief Alblasserwaard/Vijfheerenlanden Coöperatieve U.A.
+
+PyDFScraper scrapes 110 pdf's per minute
+estimated time for all pdfs would be 52 minutes
+
+
+ Wel resultaten: 57
+ Geen document: 2
+ Te weinig resultaten: 13
+ Geen resultaten: 62
+ Encrypted: 7
+ EOF-Error: 4
+ Totaal resultaten: 145
+
+
+ Wel resultaten: 83
+ Geen document: 6
+ Te weinig resultaten: 14
+ Geen resultaten: 80
+ Encrypted: 11
+ EOF-Error: 6
+ Totaal aantal resultaten: 200
+
+
+
