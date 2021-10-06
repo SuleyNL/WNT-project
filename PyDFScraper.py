@@ -19,13 +19,18 @@ def startProcess(year):
     organisationAmount = getOrganisationAmount()
     iteration = getIteration(year)
 
-    while iteration[0] < organisationAmount:
+    while iteration[0]+1 <= organisationAmount:
+        print(str(iteration[0]))
+        print(organisationAmount)
+
         #   the default setting is the best case scenario, will be modified if something is wrong.
         isError = False
         report = "Wel resultaten"
-
-        iteration = getIteration(year)
-        organisation = getOrganisation(iteration)
+        try:
+            iteration = getIteration(year)
+            organisation = getOrganisation(iteration)
+        except IndexError:
+            break
         url = getUrl(iteration, year)
         pageNumber = 0
 
@@ -41,7 +46,7 @@ def startProcess(year):
 
         generateFile(pageNumber, year, organisation, iteration, url)
         print("Processed {0} organisations and {1} files".format(iteration[0]+1, ((iteration[0]-1)*3)+iteration[1]))
-        newPath = Path("PDFs/{0}/{1}/".format(year, organisation))
+        newPath = Path("PDFs/{0}/All/{1}/".format(year, organisation))
 
     return "------[THE END]------"
 
@@ -64,7 +69,7 @@ def errorhandler(error):
 def getIteration(year):
     coordinates = [0, 0]
 
-    path = "PDFs/{0}/".format(year)
+    path = "PDFs/{0}/All/".format(year)
     pdfCounter = 0
     Path(path).mkdir(parents=True, exist_ok=True)
 
@@ -98,7 +103,7 @@ def getUrl(coordinates, year):
     # if it doesnt create the file
     # filename.mkdir(parents=True, exist_ok=True)
 
-    with open("PDFs-List/PDFs-List-%s.txt" % year) as file:
+    with open("URLs-List/URLs-List-%s.txt" % year) as file:
         line = file.readlines()[coordinates[0]].split(":")
         line.remove(line[0])
 
@@ -139,6 +144,10 @@ def isFileDownloaded(url):
             print("error: unboundlocal error")
             print("trying again")
             i += 1
+            break
+        except requests.exceptions.MissingSchema:
+            print("error: Missing url")
+            errorhandler(Error.nodocumentError)
             break
     return False
 
@@ -248,7 +257,7 @@ def generateFile(pageNumber, year, organisation, iteration, url):
     global report
 
     #   create the file
-    newPath = Path("PDFs/{0}/{1} - {2}/".format(year, iteration[0], organisation))
+    newPath = Path("PDFs/{0}/All/{1} - {2}/".format(year, iteration[0], organisation))
     newPath.mkdir(parents=True, exist_ok=True)
     newFile = str(newPath) + "/{0}. {1}.pdf".format(iteration[1]+1, report)
 

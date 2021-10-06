@@ -10,6 +10,11 @@ from math import floor
 import Extra
 
 
+def startProcess(year):
+    print(getURLs(year))
+    downloadWNTList()
+
+
 def downloadWNTList():
     # It takes exactly 1 minute to download all the organisation names
     organisationList = []
@@ -48,9 +53,9 @@ def downloadWNTList():
 
 
 def getURLs(year):
-
+    #: This is the main method, it calls searchGoogle() to get links to pdfs and then outputs them to a file
     # determine file
-    outputFile = "PDFs-List/PDFs-List-%s.txt" % year
+    outputFile = "URLs-List/URLs-List-%s.txt" % year
     print(outputFile)
     i = 0
     # open inputFile
@@ -99,7 +104,7 @@ def getURLs(year):
                 print("Next batch scheduled at: " + format(nextBatchTime, '%H:%M:%S'))
                 time.sleep(60*60*2.34)
     print(str(round((i / len(inputLines)) * 100, 2)) + "% Completed!")
-    print("[---------------------- THE END ------------------------]")
+    return "[---------------------- THE END ------------------------]"
 
 
 def searchGoogle(year, name):
@@ -138,23 +143,28 @@ def clean(organisationName):
     # You can either replace it with this "꞉"
     # Or you can replace it with something else entirely like in the code below
     afko = "afgekort: "
+    afko2 = "verkorte naam:"
     if afko in organisationName:
         organisationName = organisationName.replace(afko, "(")
+        organisationName += ")"
+    elif afko2 in organisationName:
+        organisationName = organisationName.replace(afko2, "(")
         organisationName += ")"
 
     # Some organisations also have a slash (/) in their name like number 60: Collectief Alblasserwaard/Vijfheerenlanden Coöperatieve U.A.
     # This breaks the code further down in the mapping system because it sees a slash (/) as a file in a directory
     # A solution to this would be to simply remove the slash or replace it for a unicode that looks like it
     # I chose to replace it for a backward slash (\), didnt work, windows also treats that as a file in a directory
-    # Decided to replace it for the word "and"
-    dash = "/"
-    if dash in organisationName:
-        organisationName = organisationName.replace(dash, " en ")
-
+    # Decided to replace backward slash for the word "and", forward slash for the word "en"
+    slash = "/"
+    slash2 = "\\"
+    if slash in organisationName:
+        organisationName = organisationName.replace(slash, " en ")
+    elif slash2 in organisationName:
+        organisationName = organisationName.replace(slash2, " en ")
     return organisationName
 
 
 if __name__ == "__main__":
-    #getURLs(2020)
-    downloadWNTList()
+    startProcess(2020)
 
