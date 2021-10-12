@@ -10,53 +10,68 @@ import pikepdf
 from pdfminer.pdfpage import PDFPage
 from reportlab.pdfgen.canvas import Canvas
 from enum import Enum
+import Categories
 import warnings
+import DataAnalyzer
 
 
-def startProcess(year):
+def startProcess(year: int):
+    '''
+    Algemene beschrijving (google/numpy)
+
+    '''
     global isError
     global report
     organisationAmount = getOrganisationAmount()
     iteration = getIteration(year)
 
     while iteration[0]+1 <= organisationAmount:
-        print(str(iteration[0]))
-        print(organisationAmount)
+        print("current organisation id: " + str(iteration[0]))
+        #: Determine the current PDF
+        iteration = getIteration(year)
+        organisation = getOrganisation(iteration)
+        processPDF(year, organisation, iteration)
 
-        #   the default setting is the best case scenario, will be modified if something is wrong.
-        isError = False
-        report = "Wel resultaten"
-        try:
-            iteration = getIteration(year)
-            organisation = getOrganisation(iteration)
-        except IndexError:
-            break
-        url = getUrl(iteration, year)
-        pageNumber = 0
-
-        if not isError and isFileDownloaded(url):
-            try:
-                if isEncrypted():
-                    errorhandler(Error.encryptionError)
-                else:
-                    pageNumber = getPageNumber()
-
-            except PyPDF2.utils.PdfReadError as e:
-                errorhandler(Error.EOFError)
-
-        generateFile(pageNumber, year, organisation, iteration, url)
-        print("Processed {0} organisations and {1} files".format(iteration[0]+1, ((iteration[0]-1)*3)+iteration[1]))
-        newPath = Path("PDFs/{0}/All/{1}/".format(year, organisation))
-
+    retryFailedPDFs(year)
     return "------[THE END]------"
 
 
+def processPDF(year, organisation, iteration):
+    global isError
+    global report
+
+    #: The default setting is the best case scenario, will be modified if something is wrong.
+    isError = False
+    report = "Wel WNT"
+    pageNumber = 0
+
+    #: Get the url of the PDF
+    url = getUrl(iteration, year)
+    downloadFile(url)
+
+    if not isError:
+        try:
+            if isEncrypted():
+                errorhandler(Error.encryptionError)
+            else:
+                pageNumber = getPageNumber()
+
+        except PyPDF2.utils.PdfReadError as e:
+            errorhandler(Error.EOFError)
+    print(organisation)
+    generateFile(pageNumber, year, organisation, iteration, url)
+    print("Processed {0} organisations and {1} files".format(iteration[0]+1, ((iteration[0] - 1) * 3) + iteration[1]+4))
+    # newPath = Path("PDFs/{0}/All/{1}/".format(year, organisation))
+
+
 class Error(Enum):
-    noresultsError = "Geen resultaten"
-    encryptionError = "Encrypted"
-    EOFError = "EOF-Error"
-    fewresultsError = "Te weinig resultaten"
-    nodocumentError = "Geen document"
+    fewresultsError = "Geen WNT - Te weinig zoekresultaten"
+    noresultsError = "Geen WNT - Geen zoekresultaten"
+    downloadError = "Encrypted - Download error"
+    encryptionError = "Encrypted - Standaard"
+    EOFError = "Encrypted - EOF-Error"
+    nowordsFoundError = "Encrypted - Geen woorden"
+    nodocumentError = "Geen WNT - Geen document"
 
 
 def errorhandler(error):
@@ -93,7 +108,6 @@ def getOrganisation(iteration):
     with open("Extra/WNT-List.txt") as f:
         file = f.readlines()
         organisation = file[iteration[0]].replace("\n", "")
-        amountOfOrganisations = len(file)
 
     return organisation
 
@@ -119,12 +133,12 @@ def getUrl(coordinates, year):
     return url
 
 
-def isFileDownloaded(url):
+def downloadFile(url):
 
     headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36"}
     i = 0
-    while i < 10:
-        # try to download file to workingmemory
+    while i < 3:
+        # try to download file to WorkingMemory
         try:
             print("waiting up to 1 minute to download pdf from: {0}".format(url))
             response = requests.get(url, headers=headers, timeout=60)
@@ -139,17 +153,17 @@ def isFileDownloaded(url):
             print("sleeping {0} sec then trying again".format((i+1)*10))
             time.sleep((i+1)*10)
             i += 1
-            break
         except UnboundLocalError:
             print("error: unboundlocal error")
             print("trying again")
+            time.sleep(1)
             i += 1
-            break
         except requests.exceptions.MissingSchema:
             print("error: Missing url")
-            errorhandler(Error.nodocumentError)
+            i += 1000
             break
-    return False
+    #: the while loop is supposed to return True or break.
+    errorhandler(Error.downloadError)
 
 
 def isEncrypted():
@@ -163,7 +177,10 @@ def isEncrypted():
             pdf1.close()
 
             EOF_MARKER = b'%%EOF'
-
+            #EOF_MARKER = b'\r\n%%EOF' - next step
+            #startxref - step 2
+            # check whats wrong with noresults that have results  (%%EO) - step 3
+            # Brabants historisch informatiecentrum 1
             mainfile = "WorkingMemory/currentFile.pdf"
             temporaryfile = "WorkingMemory/temporaryfile.pdf"
             with open(mainfile, 'rb') as f:
@@ -215,32 +232,33 @@ def getPageNumber():
     pdf = PdfFileReader("WorkingMemory/currentFile.pdf")
 
     totalScore = []
-
+    realWordScore = 0
     i = 0
     try:
         # For every page, check the amount of occurences of these searchterms
         while i < pdf.getNumPages():
             page = pdf.getPage(i).extractText().split(" ")
-
+            realWordScore += sum((itm.lower().count("de") for itm in page))
             #relevanceScore = page.count("bezoldiging") + page.count("Bezoldiging") + page.count("BEZOLDIGING") + page.count("WNT")
             highscore = 0
-            currentScore = sum((itm.count("bezoldiging") for itm in page)) + \
-                            sum((itm.count("WNT") for itm in page)) + \
-                            sum((itm.count("bezoldigingsmaximum") for itm in page)) + \
-                            sum((itm.count("Wet Normering") for itm in page)) + \
-                            sum((itm.count("Bezoldiging") for itm in page))
+            currentScore = sum((itm.lower().count("bezoldiging") for itm in page)) + \
+                            sum((itm.lower().count("topfunctionarissen") for itm in page)) + \
+                            sum((itm.lower().count("beloning") for itm in page)) + \
+                            sum((itm.lower().count("wnt") for itm in page))
 
             totalScore.append(currentScore)
             if currentScore > highscore:
                 highscore = currentScore
                 pageNumber = highscore
             i += 1
-            print(str(pdf.getNumPages()-i))
     except:
         errorhandler(Error.encryptionError)
-
+    #: if no real words have been found, report encryption
+    #: "de " occurs on average 20 times per page, threshold will be set at a low end of 4 per page
+    if realWordScore/pdf.getNumPages() < 4:
+        errorhandler(Error.nowordsFoundError)
     # if there are no results for searchterm, report an error
-    if sum(totalScore) < 1:
+    elif sum(totalScore) < 1:
         errorhandler(Error.noresultsError)
     elif sum(totalScore) < 4:
         errorhandler(Error.fewresultsError)
@@ -249,6 +267,7 @@ def getPageNumber():
         pageNumber = totalScore.index(max(totalScore))
     print("Relevance score matrix: \n" + str(totalScore))
     print("Relevant page: " + str(pageNumber))
+    print("RealWordScore: " + str(realWordScore))
     return pageNumber
 
 
@@ -347,7 +366,42 @@ def generateFile(pageNumber, year, organisation, iteration, url):
                 output.write(f)
 
 
+def retryFailedPDFs(year):
+    path = "PDFs/{0}/All/".format(year)
+    pdfCounter = 0
+    iteration = [0,0]
+    organisationList = os.listdir(path)
+
+    while iteration[0] < len(organisationList):
+        organisation = getOrganisation(iteration)
+        organisationDirectory = os.listdir(path + str(iteration[0]) + " - " + organisation)
+
+        for pdf in organisationDirectory:
+            pdfCounter += 1
+            iteration = [math.floor(pdfCounter / 3), pdfCounter % 3]
+            print("pdfCounter: " + str(pdfCounter))
+
+            if "Download error" in pdf:
+                print("iteration: " + (str(iteration)))
+                print("organisation: " + organisation)
+                processPDF(year, organisation, iteration)
+
+
+def cleanDoublesFromList(year):
+    path = "PDFs/{0}/All/".format(year)
+    organisationList = []
+    for organisation in os.listdir(path):
+        print(organisation)
+        id = ''.join(organisation.split(" - ")[1:-1])
+        if organisation not in organisationList:
+            print("not in here")
+            organisationList.append(organisation)
+        else:
+            print("in here")
+            os.remove(organisation)
+            print(organisation)
+
 
 if __name__ == '__main__':
-
+    #retryFailedPDFs(2020)
     print(startProcess(2020))

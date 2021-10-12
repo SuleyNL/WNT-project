@@ -9,9 +9,9 @@ import pikepdf
 from pdfminer.pdfpage import PDFPage
 from reportlab.pdfgen.canvas import Canvas
 from collections import Counter
-from PyDFScraper import Error
 from enum import Enum
 from distutils.dir_util import copy_tree
+import Categories
 
 
 def createRapport(year):
@@ -22,50 +22,36 @@ def createRapport(year):
 
     #: Categorise all organisations into one of 5 different search categories
     categorise()
-    '''
-    #: print all info from category
-    for category in categories:
-    print("Categorie " + category.name)
-    print(category.amount)
-    print(category.matrix)
-    '''
+    encryptedpercentage = 0
+    geenWNTpercentage = 0
+    welWNTpercentage = 0
 
     for category in categories:
-        print(category.name + ": " + calculatePercentage(category.amount, totalOrganisations))
+        percentage = calculatePercentage(category.amount, totalOrganisations)
+        print(category.name + ": " + str(percentage))
 
+        if "Encrypted" in category.name:
+            encryptedpercentage += percentage
+        if "Geen WNT" in category.name:
+            geenWNTpercentage += percentage
+        if "Wel WNT" in category.name:
+            welWNTpercentage += percentage
+
+    print()
+    print("Encrypted: " + str(encryptedpercentage) + "%")
+    print("Geen WNT: " + str(geenWNTpercentage) + "%")
+    print("Wel WNT: " + str(welWNTpercentage) + "%")
+
+    '''
     # print()
     print(totalOrganisations)
     print(categories[Categories.encryption.value].amount)
 
     print(categories[Categories.encryption.value].amount)
+    '''
     movePdfs(year)
+
     return "------[THE END]------"
-
-
-class Category:
-    def __init__(self, name):
-        self.name = name
-        self.amount = 0
-        self.matrix = []
-        self.organisations = []
-
-
-class Categories(Enum):
-    succes = 0
-    fewresults = 1
-    encryption = 2
-    EOF = 3
-    noresults = 4
-    nodocument = 5
-
-
-class SearchTerm(Enum):
-    succes = "Wel resultaten"
-    fewresults = "Te weinig resultaten"
-    encryption = "Encrypted"
-    EOF = "EOF-Error"
-    noresults = "Geen resultaten"
-    nodocument = "Geen document"
 
 
 def initialiseVariables(currentYear):
@@ -91,8 +77,8 @@ def initialiseVariables(currentYear):
 
     global categories
     categories = []
-    for searchterm in SearchTerm:
-        categories.append(Category(searchterm.value))
+    for searchterm in Categories.SearchTerm:
+        categories.append(Categories.Category(searchterm.value))
 
     global totalPdfs
     totalPdfs = 0
@@ -110,7 +96,7 @@ def categorise():
     matrix = createEmptyMatrix()
 
     #: Convert the un-indexable "SearchTerm Enum" into an indexable List
-    searchTermList = [e for e in SearchTerm]
+    searchTermList = [e for e in Categories.SearchTerm]
     searchTermListCount = len(searchTermList)
 
     #: Pass every searchTerm through the matrixAtLeastOne() checker
@@ -130,10 +116,16 @@ def categorise():
         i += 1
 
 
-def matrixAtLeastOne(filledMatrix, searchTerm):
+def matrixAtLeastOne(filledMatrix: list, searchTerm: Categories.SearchTerm):
+    '''
     #: This function creates the data necessary to categorise the organisations
     #: It is meant to be called recursively for each category like layers of a filter
-    #: It's inputs are the binary list created by the last filter(filledMatrix), and the category name (searchTerm)
+
+    :param filledMatrix: It's inputs are the binary list created by the last filter(filledMatrix)
+    :param searchTerm: The category name (searchTerm)
+    :return:
+    '''
+
     #: It's outputs are;
     #: a binary list for the next filter,
     #: a binary list unique to this category,
@@ -169,16 +161,17 @@ def matrixAtLeastOne(filledMatrix, searchTerm):
                 searchTermCount += 1
                 #: Increment total found searches on this searchTerm
         i += 1
-
+    print(str(searchTermCount) +" organisaties zijn " + searchTerm.value)
+    print()
     return filledMatrix, UniqueMatrix, searchTermCount, UniqueOrganisationsList
 
 
 def calculatePercentage(partial, total):
-    percentage = str(round(100 * (partial / total), 2)) + "%"
+    percentage = round(100 * (partial / total), 2)
     return percentage
 
 
-def getPDFsList(year):
+def getPDFsList(year: int):
     #: Returns a list of all PDFs
     global path
     PDFsList = []
@@ -227,12 +220,10 @@ def movePdfs(year):
     for category in categories:
         for organisation in category.organisations:
             originalPath = "PDFs/{0}/All/{1}".format(year, organisation)
-            newPath = "PDFs/{0}/{1}/{2}".format(year, category.name, organisation)
+            newPath = "PDFs/{0}/Categories/{1}/{2}".format(year, category.name, organisation)
             Path(newPath).mkdir(parents=True, exist_ok=True)
             #: Move the entire organisation map to the new location
             copy_tree(originalPath, newPath)
-
-
 
 
 if __name__ == '__main__':
