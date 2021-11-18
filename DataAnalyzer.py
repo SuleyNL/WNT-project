@@ -11,7 +11,8 @@ from reportlab.pdfgen.canvas import Canvas
 from collections import Counter
 from enum import Enum
 from distutils.dir_util import copy_tree
-import Categories
+from Categories import *
+
 
 
 def createRapport(year):
@@ -26,9 +27,9 @@ def createRapport(year):
     geenWNTpercentage = 0
     welWNTpercentage = 0
 
-    for category in categories:
-        percentage = calculatePercentage(category.amount, totalOrganisations)
-        print(category.name + ": " + str(percentage))
+    for category in categories.get_all_categories():
+        percentage = calculatePercentage(category.searchTermCount, totalOrganisations)
+        print(category.name + ": " + str(percentage) + "%")
 
         if "Encrypted" in category.name:
             encryptedpercentage += percentage
@@ -38,10 +39,18 @@ def createRapport(year):
             welWNTpercentage += percentage
 
     print()
-    print("Encrypted: " + str(encryptedpercentage) + "%")
-    print("Geen WNT: " + str(geenWNTpercentage) + "%")
     print("Wel WNT: " + str(welWNTpercentage) + "%")
+    print("Geen WNT: " + str(geenWNTpercentage) + "%")
+    print("Onleesbaar: " + str(encryptedpercentage) + "%")
+    print()
 
+    print("Schatting ratio Wel/Geen WNT")
+    print(str(calculatePercentage(welWNTpercentage, welWNTpercentage + geenWNTpercentage)) + "%" + " / " + str(calculatePercentage(geenWNTpercentage, welWNTpercentage + geenWNTpercentage)) + "%")
+    print(str(round(calculatePercentage(welWNTpercentage, welWNTpercentage + geenWNTpercentage))) + " / " + str(round(calculatePercentage(geenWNTpercentage, welWNTpercentage + geenWNTpercentage))))
+
+    #print(categories[2].name)
+
+    #print(categories.get_category_by_id(7).name)
     '''
     # print()
     print(totalOrganisations)
@@ -76,9 +85,7 @@ def initialiseVariables(currentYear):
     processedData = Counter(PDFsListClean)
 
     global categories
-    categories = []
-    for searchterm in Categories.SearchTerm:
-        categories.append(Categories.Category(searchterm.value))
+    categories = Categories()
 
     global totalPdfs
     totalPdfs = 0
@@ -96,7 +103,7 @@ def categorise():
     matrix = createEmptyMatrix()
 
     #: Convert the un-indexable "SearchTerm Enum" into an indexable List
-    searchTermList = [e for e in Categories.SearchTerm]
+    searchTermList = list(CategoryNames.keys())
     searchTermListCount = len(searchTermList)
 
     #: Pass every searchTerm through the matrixAtLeastOne() checker
@@ -110,16 +117,18 @@ def categorise():
         #: corresponding organisation has been categorised
         searchData = matrixAtLeastOne(matrix, searchTermList[i])
         matrix = searchData[0]
-        categories[i].matrix = searchData[1]
-        categories[i].amount = searchData[2]
-        categories[i].organisations = searchData[3]
+        categories.set_data(searchData[0], searchData[1], searchData[2], searchData[3], i)
+
+        #categories[i].matrix = searchData[1]
+        #categories[i].amount = searchData[2]
+        #categories[i].organisations = searchData[3]
         i += 1
 
 
-def matrixAtLeastOne(filledMatrix: list, searchTerm: Categories.SearchTerm):
+def matrixAtLeastOne(filledMatrix: list, searchTerm: str):
     '''
     #: This function creates the data necessary to categorise the organisations
-    #: It is meant to be called recursively for each category like layers of a filter
+    #: It is meant to be called recursively for each category like mutiple filter layers
 
     :param filledMatrix: It's inputs are the binary list created by the last filter(filledMatrix)
     :param searchTerm: The category name (searchTerm)
@@ -145,12 +154,13 @@ def matrixAtLeastOne(filledMatrix: list, searchTerm: Categories.SearchTerm):
     UniqueMatrix = createEmptyMatrix()
     UniqueOrganisationsList = []
     i = 0
-
-    while i < totalOrganisations:
+    organisations = [f.path for f in os.scandir('PDFs/2020/All/')]
+    for organisation in organisations:
         if not filledMatrix[i]:
+            print('PDFs/2020/All/' + organisation)
+            currentOrganisationPdfs = [f.path for f in os.scandir(organisation)]
             #: If there is a 0 it means that organisation hasn't been categorised yet
-            currentPDF = i*3
-            if searchTerm.value in PDFsListClean[currentPDF:currentPDF + 3]:
+            if searchTerm in str(currentOrganisationPdfs):
                 #: Check if this current searchTerm in one of the 3 Pdf's of organisation
                 filledMatrix[i] = 1
                 #: Fill in the filledMatrix; this org has been classified
@@ -161,7 +171,7 @@ def matrixAtLeastOne(filledMatrix: list, searchTerm: Categories.SearchTerm):
                 searchTermCount += 1
                 #: Increment total found searches on this searchTerm
         i += 1
-    print(str(searchTermCount) +" organisaties zijn " + searchTerm.value)
+    print(str(searchTermCount) +" organisaties zijn " + searchTerm)
     print()
     return filledMatrix, UniqueMatrix, searchTermCount, UniqueOrganisationsList
 
@@ -175,12 +185,10 @@ def getPDFsList(year: int):
     #: Returns a list of all PDFs
     global path
     PDFsList = []
-    pdfCounter = 0
     Path(path).mkdir(parents=True, exist_ok=True)
-
-    for organisation in os.listdir(path):
-        for pdf in os.listdir(path+organisation):
-            pdfCounter += 1
+    organisations = [f.path for f in os.scandir('PDFs/2020/All/')] #fastest way to get all items in directory: 1ms vs 18+ms
+    for organisation in organisations:
+        for pdf in os.listdir(organisation):
             PDFsList.append(pdf)
 
     return PDFsList
@@ -211,14 +219,12 @@ def getOrganisationsList(year):
     return organisationsList
 
 
-#def generatePdf():
-
-
 def movePdfs(year):
     #: This function copies all pdfs from "All" and puts them into their own respective categories
     global categories
-    for category in categories:
-        for organisation in category.organisations:
+    for category in categories.get_all_categories():
+        print("category: " + category.name)
+        for organisation in category.UniqueOrganisationsList:
             originalPath = "PDFs/{0}/All/{1}".format(year, organisation)
             newPath = "PDFs/{0}/Categories/{1}/{2}".format(year, category.name, organisation)
             Path(newPath).mkdir(parents=True, exist_ok=True)
@@ -226,6 +232,30 @@ def movePdfs(year):
             copy_tree(originalPath, newPath)
 
 
-if __name__ == '__main__':
+def standardizeIDs():
+    organisations = [f.path for f in os.scandir('PDFs/2020/All/')] #fastest way to get all items in directory: 1ms vs 18ms
+    pathname = 'PDFs/2020/All/'
+    for organisation in organisations:
+        organisation = organisation.split('/')[-1]
 
+        id = organisation.split(" - ")[0]
+
+        if int(id) < 10:
+            id = "000" + id
+
+        elif int(id) < 100:
+            id = "00" + id
+
+        elif int(id) < 1000:
+            id = "0" + id
+
+        newName = pathname + id + " - " + organisation.split(" - ")[1]
+        organisation = pathname + organisation
+
+        os.renames(organisation, newName)
+
+#def generatePdf():
+
+
+if __name__ == '__main__':
     print(createRapport(2020))

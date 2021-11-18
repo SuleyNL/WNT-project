@@ -16,7 +16,7 @@ Even some organisations that are labeled as results, may have no real results be
 
 Only download all pages if its needed
 Stackoverflow account maken, vragen stellen, laten zien wat ik al heb gedaan
-output van programma kan gewoon in excel sheet
+TODO: output van programma kan gewoon in excel sheet
 
 IT coordinator:
 applicaties heb ik nodig
@@ -25,14 +25,15 @@ paulina
 janette van puffelen 
 nicole de krijger
 
-Aangeven wanneer iets vermoedelijk encrypted is
-"het echte pdf opslaan"
-digidoc linksonderin werkomgeving
-Datum en tijd van website vastleggen
-accountantverklaring erbij
+DONE Aangeven wanneer iets vermoedelijk encrypted is
+PASS "het echte pdf opslaan" hoeft niet - extraatje
+PASS digidoc linksonderin werkomgeving
+DONE Datum en tijd van scraping vastleggen
+TODO: controleverklaring/accountantverklaring erbij
 
 Robert Taal voor aanvraag toestemming BZK
 
+_________________________________________
 Beste Ministerie van Binnenlandse Zaken,
 Op 29 september 2021 om 14:38 werdt er een document gevonden van de organisatie 'Cliëntenbelang Amsterdam' Volgens
 de google zoekterm: "2020 Cliëntenbelang Amsterdam (Jaarverslag|Jaarrekening|WNT-verantwoording|Verslaggevingsdocument|Jaarstuk)
@@ -41,94 +42,96 @@ bevat geen van de volgende termen: "bezoldiging", "Bezoldiging", "WNT", "bezoldi
 rede wordt dit document geclassificeerd als:
 
 Geen resultaten
-
-
+_________________________________________
 ENCRYPTED: 1, 2, and 3 of #60: Collectief Alblasserwaard/Vijfheerenlanden Coöperatieve U.A.
 
 PyDFScraper scrapes 110 pdf's per minute
 estimated time for all pdfs would be 52 minutes
 
 
- Wel resultaten: 57
- Geen document: 2
- Te weinig resultaten: 13
- Geen resultaten: 62
- Encrypted: 7
- EOF-Error: 4
- Totaal resultaten: 145
+TODO: Check for %%EO in Geen resultaten documents that arent read
+TODO: Algemene planning tot eind stage per product
+TODO: mail sturen potentiele stagebegeleider
+TODO: air-quotes die je dwingen om te documenteren pycharm - linting - compiler/interpreter codechecking
+DONE: Alle errors, searchresults en categories kunnen in èèn gezamenlijke aparte file/class
 
-
- Wel resultaten: 83
- Geen document: 6
- Te weinig resultaten: 14
- Geen resultaten: 80
- Encrypted: 11
- EOF-Error: 6
- Totaal aantal resultaten: 200
-
-%%EO in Geen resultaten documents that arent read
-Algemene planning tot eind stage per product
-mail sturen potentiele stagebegeleider
-air-quotes die je dwingen om te documenteren pycharm - linting - compiler/interpreter codechecking
-Alle errors, searchresults en categories kunnen in èèn gezamenlijke aparte file/class
-
+DONE: COTH bijlage conceptverslag
+TODO: Second best noteren
+TODO: https://almanak.overheid.nl/ zoeken voor site
+TODO: site:https://www.abg.nl filetype:pdf jaarverslag #binnen de site zoeken voor pdf
+TODO: kvk open dataset, jaarrekeningen, SBI-codes
+TODO: Floris Admiraal bericht sturen om te vragen over beoordeling
 
 "de " komt gemiddeld 20x voor per pagina
 'Geen resultaten' MET resultaten:
 
-22 organisations = 66 documents; 18 of which HAVE results in 12 unique companies
-[Organisatie] [Pdf]
-41              3
-43              1
-43              2
-47              2
-50              1
-50              2
-119             1
-133             1
-133             2
-147             2
-147             3
-165             1
-234             1
-234             3
-238             3
-301             1
-301             2
-306             1
+MOEILIJK TE VINDEN ORGANISATIE LINKS:
+#ID - NAAM                                      LOCATIE         REDEN
+820 - Stadsgewestelijk Zwembad Vastgoed B.V.	Vlissingen      3e pagina van google
+_________________
+LIJST VAN LINK BRONNEN:
 
-20 organisations = 60 documents; 5 of which HAVE results in 5 unique companies
-'Te Weinig resultaten' MET veel resultaten:
-[Organisatie] [Pdf]
-2               1
-10              1               beloning
-205             2
-240             2
-453             2               geen bezoldiging ontvangen
+Bedrijven:
+dnb.com
+drimble.nl/bedrijf          -> veel organisaties, moeilijk te doorzoeken met simple URL request
+bedrijvengids.cybo.com      -> weinig organisaties, moeilijk te doorzoeken
+cylex.nl                    -> redelijk veel organisaties, makkelijk te doorzoeken
+firmania.nl                 -> weinig organisaties
+graydongo.nl                -> redelijk veel organisaties, middelmatig te doorzoeken
+internettelefoongids.nl     -> geen websites
+nederlandinbedrijf.nl       -> geen organisaties
+samrate.com                 -> verouderd
+nationalezorggids.nl        -> alleen zorg
+bedrijfnederland.nl         -> ?? onbereikbaar
 
-'Te Weinig resultaten' MET geen resultaten:
-[Organisatie] [Pdf]
-224             1               geen resultaten
-248             3
 
-________________
-11-10-2021 11:00
-Wel WNT: 61.88%
-Encrypted - Standaard: 3.65%
-Encrypted - EOF-Error: 24.35%
-Encrypted - Geen woorden: 1.69%
-Geen WNT - Geen zoekresultaten: 6.62%
-Geen WNT - Te weinig zoekresultaten: 0.9%
-Geen WNT - Geen document: 0.9%
-________________
+Overheidsinstanties:
+almanak.overheid.nl
 
-12-10-2021 11:19
-Wel WNT: 60.08%
-Encrypted - Standaard: 3.86%
-Encrypted - EOF-Error: 25.41%
-Encrypted - Download error: 3.18%
-Encrypted - Geen woorden: 5.35%
-Geen WNT - Geen zoekresultaten: 2.12%
-Geen WNT - Te weinig zoekresultaten: 0.0%
-Geen WNT - Geen document: 0.0%
-________________
+TODO: Jan-willem vragen om een casus toezichtsonderzoek indien het hem uitkomt met tijd voor mij
+TODO: Organisatie 740 heet 'recreatieschap' dit is geen volledige naam. Zoek naast de eigen naaam ook plaatsnamen om dit te voorkomen
+
+________________________
+GET https://drimble.nl/bedrijfzoek.php?sbi=0&regio=0&input=liander%20nv HTTP/1.1
+
+Host: drimble.nl
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="95", "Chromium";v="95", ";Not A Brand";v="99"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: https://drimble.nl/bedrijf/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: nl-NL,nl;q=0.9,en-US;q=0.8,en;q=0.7,de;q=0.6
+Cookie: _ga=GA1.2.1686978036.1635928626; _pubcid=12efa1b8-0652-438f-8234-fa2d190ef955; euconsent-v2=CPPFuXvPPFuXvDsABANLBzCkAP_AAH_AABpYIUNf_X__bX9j-_59f_t0eY1P9_r3v-QzjhfNt-8F2L_W_L0X42E7NF36pq4KuR4Eu3LBIQNlHMHUTUmwaokVrzHsakWcpyNKJ7LEmnMZO2dYGHtPn9lTuZKY7_78__fz3z-v_t_-39T378X_3_d5_X---_e_V399zLv9____39nN___9v-_8EKACTDUvIAuxLHBk2jSqFECMKwkKgFABRQDC0RWADA4KdlYBHqCFgAhNQEYEQIMQUYMAgAEAgCQiICQAsEAiAIgEAAIAUICEABEwCCwAsDAIABQDQsQIoAhAkIMjgqOUwICJFooJbKwBKCrY0wgDLLACgUf0VGAiUIIFgZCQsHMcASAlwskCAAAA.YAAAAAAAAAAA; DrimbleResp=m1QXGj1nVndyWaxzQ9uGCZ2FKcUNC1t7i%2FILM5a0zC4qTvXsWVIXFhzt2ThtVVRgePimzOqOsKaEtinLOiLb4tsnlYW2hUVsS6uJdI6Z1Z1R59raNmvP0s2TQbykOtcg56RzAA%3D%3D; _gid=GA1.2.461998450.1636552950; _pbjs_userid_consent_data=5935387919608864; __gads=ID=d1388e88a647592e-22538af840cb003c:T=1636552973:RT=1636552973:S=ALNI_MYZohaoGm885HIFcdIv4PuxFo-d_g; WebAdsLayer={"frequencyCap":{"mobileLightBox":1636552976252}}; pbjs-id5id=%7B%22created_at%22%3A%222021-11-10T14%3A02%3A44.390924Z%22%2C%22id5_consent%22%3Atrue%2C%22original_uid%22%3A%22ID5*YU083cHxjZBn7_2wWJgoQBltNNObyIQ5zL2l0lW92MYAACTp5_gpiY8Hfp7s2YAg%22%2C%22universal_uid%22%3A%22ID5*aj9iu7igKoEbkqO4SfArsS1xkX50p5Xks0icYgtrJJIAAJN5P5rANXKVe9V6W127%22%2C%22signature%22%3A%22ID5_AXsGrcLApSWBHX5mEVayyd9OaGge6sCPBZsckzP96caFqv7VIxBob8PnTrEF-_gst6hWTKSd03IfpSNzbzKRe_A%22%2C%22link_type%22%3A2%2C%22cascade_needed%22%3Afalse%2C%22privacy%22%3A%7B%22jurisdiction%22%3A%22gdpr%22%2C%22id5_consent%22%3Atrue%7D%7D; pbjs-id5id_last=Wed%2C%2010%20Nov%202021%2014%3A02%3A56%20GMT; waNS={"recency":{"DRIMBLE.NL_WEB_BEDRIJF_OUTSTREAM":1635930672277,"DRIMBLE.NL_WEB_BEDRIJF_BILL":1635930717085,"DRIMBLE.NL_WEB_BEDRIJF_RIGHT":1635930717095,"DRIMBLE.NL_WEB_BEDRIJF_LEFT":1635930739619,"DRIMBLE.NL_WEB_LIGHT":1636565819011,"DRIMBLE.NL_WEB_BEDRIJF_APTO":1635930717134,"DRIMBLE.NL_MWEB_BEDRIJF_OUTSTREAM":1635931740573,"DRIMBLE.NL_MWEB_LIGHT":1636562446391,"DRIMBLE.NL_MWEB_BEDRIJF_RM":1635931743541,"DRIMBLE.NL_WEB_112_RIGHT":1636552990476}}
+___________________________
+GET https://www.overheid.nl/zoekresultaat/contactgegevens-overheden/1/10/lijst/field_zoek_organisate[0]=duo%2B&sortBy=default?menuBeleidEnRegelgeving HTTP/1.1
+Host: www.overheid.nl
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="95", "Chromium";v="95", ";Not A Brand";v="99"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br
+Accept-Language: nl-NL,nl;q=0.9,en-US;q=0.8,en;q=0.7,de;q=0.6
+Cookie: _pk_id.7ce2a4e8-d9e0-42ea-a88f-7526a88ab44f.340a=948f660e7ce347d5.1630391910.1.1630391917.1630391910.; _pk_id.074a5050-2272-4f8a-8a07-a14db33f270b.340a=58270e249798fa33.1631090342.1.1631090355.1631090342.; stg_returning_visitor=Fri%2C%2015%20Oct%202021%2007:51:47%20GMT; SSESS6ae35bd3c7413b85293313554b33aca0=Dj843YviV6Ruhx-oeek-r5j1WtFq5fCH1sIh_VfMKHI; SESS6ae35bd3c7413b85293313554b33aca0=eAZfmgzELs1TR2vDRo4bfwnVjY-Jnk9c7i19VkKTTVs; _pk_id.d878bc05-70e8-4720-a8e5-e6bbe995b44e.340a=9e602102d4076a9a.1634284310.9.1636551246.1636551212.; stg_externalReferrer=; _pk_id.1a96e6f9-01b9-4565-8580-046a1491ea57.340a=0afdda59c49e7951.1631083638.18.1636633656.1636633569.; stg_traffic_source_priority=1; _pk_ses.042a8a3e-7692-4e18-8abf-c3034df672d0.340a=*; _pk_ses.3563c399-95ab-4851-b79b-4d4d85b6df10.340a=*; stg_last_interaction=Thu%2C%2011%20Nov%202021%2013:42:43%20GMT; _pk_id.042a8a3e-7692-4e18-8abf-c3034df672d0.340a=07d6d58ddf47a3ba.1634284298.8.1636638164.1636638138.; _pk_id.3563c399-95ab-4851-b79b-4d4d85b6df10.340a=e85c0a43073ae748.1630391910.8.1636638164.1636638138.
+____________________________
+
+Arnold's programma berekent de co2 kosten van verschillende keuzes van transport naar werk
+
+TODO: Vragen aan Arnold: Zou jij het aanraden met database te werken? ipv georganiseerde mappenstructuur.
+TODO: pro's: schaalbaar en overal toegankelijk, makkelijk overdraagbaar,
+TODO: con's: over het internet maakt het langzamer, kost tijd om in te richten, niet nodig voor kleinschalig opdracht, alleen indien uitschalen naar 10x deze grootte
+TODO: antw: Lokale database, postgres, psycopg2 als interface
+
+TODO: Rinze mail sturen over overheid.nl filter WNT aanzetten met volledige lijst
