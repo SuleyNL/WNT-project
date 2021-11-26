@@ -18,7 +18,7 @@ import re
 import struct
 
 # Final pre- refactored version, 26-11-2021, 14:14
-# NonFinal refactored version, 14:33
+
 
 def startProcess(year: int):
     """
