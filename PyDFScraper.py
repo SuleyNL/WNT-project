@@ -17,6 +17,8 @@ import DataAnalyzer
 import re
 import struct
 
+# Final pre- refactored version, 26-11-2021, 14:14
+
 
 def startProcess(year: int):
     """
@@ -176,7 +178,7 @@ def getUrl(coordinates, year):
     # if it doesnt create the file
     # filename.mkdir(parents=True, exist_ok=True)
 
-    with open("PDF-URLs-List/PDF-URLs-List-%s.txt" % year) as file:
+    with open("PDF-URLs-List/PDF-URLs-List-%s-first.txt" % year) as file:
         line = file.readlines()[coordinates[0]].split(":")
         line.remove(line[0])
         if '' in line:

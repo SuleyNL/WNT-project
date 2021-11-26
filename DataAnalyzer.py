@@ -14,7 +14,6 @@ from distutils.dir_util import copy_tree
 from Categories import *
 
 
-
 def createRapport(year):
     global categories
     global totalOrganisations
@@ -254,8 +253,23 @@ def standardizeIDs():
 
         os.renames(organisation, newName)
 
+
 #def generatePdf():
+
+def howManyLinesFilled(filename):
+    totalLines = 0
+    linesFilled = 0
+    with open(filename) as file:
+        lines = file.readlines()
+    for line in lines:
+        totalLines +=1
+        line = line.strip().split(": ")
+        if len(line) > 1:
+            linesFilled +=1
+    return calculatePercentage(linesFilled, totalLines)
 
 
 if __name__ == '__main__':
-    print(createRapport(2020))
+    print(howManyLinesFilled("PDF-URLs-List/PDF-URLs-List-2020-first.txt"))
+    print(howManyLinesFilled("Organisations-URLs-List/Organisation-URLs-List-2020-Combined.txt"))
+    #print(createRapport(2020))

@@ -59,8 +59,19 @@ DONE: COTH bijlage conceptverslag
 TODO: Second best noteren
 TODO: https://almanak.overheid.nl/ zoeken voor site
 TODO: site:https://www.abg.nl filetype:pdf jaarverslag #binnen de site zoeken voor pdf
-TODO: kvk open dataset, jaarrekeningen, SBI-codes
-TODO: Floris Admiraal bericht sturen om te vragen over beoordeling
+TODO: Checken voor mezelf wat nodig is voor een goed cijfer, Floris een bericht sturen om te vragen of ik het goed doe
+TODO: Zoek query noteren in PDFreport
+
+site:http://www.zaanstad.nl 2020 ("Jaarverslag"|"Jaarrekening"|"WNT-verantwoording"|"Verslaggevingsdocument"|"Jaarstuk") filetype:pdf
+
+site:api1.ibabs.eu
+site:zoek.officielebekendmakingen.nl
+site:officielebekendmakingen.nl
+site:*.bestuurlijkeinformatie.nl
+site:bestuur.*.nl
+site:raad.*.nl
+site:gemeenteraad.*.nl
+site:findo.nl
 
 "de " komt gemiddeld 20x voor per pagina
 'Geen resultaten' MET resultaten:
@@ -119,7 +130,7 @@ Upgrade-Insecure-Requests: 1
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
 Sec-Fetch-Site: none
-Sec-Fetch-Mode: navigate
+Sec-Fetch -Mode: navigate
 Sec-Fetch-User: ?1
 Sec-Fetch-Dest: document
 Accept-Encoding: gzip, deflate, br
@@ -135,3 +146,17 @@ TODO: con's: over het internet maakt het langzamer, kost tijd om in te richten, 
 TODO: antw: Lokale database, postgres, psycopg2 als interface
 
 TODO: Rinze mail sturen over overheid.nl filter WNT aanzetten met volledige lijst
+
+TODO: Tip: elke fase een andere file
+TODO: Tip: mogelijk .py naar .epmb teurg
+TODO: Visual Studio Code downloaden. deze translate goed naar notebook en terug, op eigen laptop
+TODO: Python code naar mezelf mailen in .txt of zip
+TODO: Gitlab connected aan jupiter shell
+TODO: commandline git interface is wat je moet gebruiken voor git+shell
+TODO: ODC Noord = flex2.rijk.nl > light voor webapp > Inloggen ODC Noord
+TODO: contact opnemen werkgever voor ODC Noord
+TODO: Helpdesk BZK bellen voor eigen laptop
+
+// OPTIMALISATIE VAN SCRAPER //
+TODO: check in top10 searchresults of de woord jaarrekening/jaarverslag voorkomt in pdf title
+TODO: check of organisatienaam voorkomt in pdf.

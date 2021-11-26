@@ -10,6 +10,9 @@ from math import floor
 import Extra
 from lxml import html
 from bs4 import BeautifulSoup
+from pathlib import Path
+
+
 
 def startProcess(year):
     print(storePdfURLs(year))
@@ -61,7 +64,7 @@ def storePdfURLs(year: int):
     print(outputFile)
     i = 0
     # open inputFile
-    with open('Extra/WNT-List.txt') as inputFile:
+    with open('Extra/WNT-List.txt', 'r+') as inputFile:
         inputLines = inputFile.readlines()
 
         # check if there is already some output so it can continue from there
@@ -119,10 +122,10 @@ def searchGoogle(year: str, name: str, template: str):
     searchTerm = year + " " + name + " " + template
 
     # here it actually searches the web
-    searchResults = search(searchTerm)
+    searchResults = search(searchTerm.replace("\n", ""))
 
-    print("searching for PDF of: " + name)
-    print("in year: " + year)
+    print("searching organisation: " + name)
+    print("query : " + searchTerm)
 
     return searchResults[0:3]
 
@@ -173,11 +176,14 @@ def getOrgUrls(year: int):
     outputFile = "Organisations-URLs-List/Organisation-URLs-List-%s-Almanak.txt" % year
     i = 0
     # open inputFile
-    with open('Extra/WNT-List.txt', "r") as inputFile:
+
+    Path('Extra/WNT-List.txt').touch()
+    with open('Extra/WNT-List.txt', "r+") as inputFile:
         inputLines = inputFile.readlines()
 
         # check if there is already some output so it can continue from there
-        with open(outputFile, "w+") as output:
+        Path(outputFile).touch()
+        with open(outputFile, "r+") as output:
             outputLines = output.readlines()
             if len(outputLines) > 0:
                 i = int(outputLines[-1].split(":")[0].replace("\n", "")) + 1
@@ -356,10 +362,82 @@ def searchDrimble(organisation_name: str):
 
 def combineAlmanakDrimble():
     #TODO: Combine Drimble and Almanak url list
+
     pass
 
 
+def storePdfURLsfromOrg(year: int):
+    #: This is the main method, it calls searchGoogle() to get links to pdfs
+    # and then outputs them to PDF-URLs-List-{year}.txt
+    # determine file
+    outputFile = "PDF-URLs-List/PDF-URLs-List-%s-first.txt" % year
+    print(outputFile)
+    i = 0
+    # open inputFile
+    Path('Extra/WNT-List.txt').touch()
+    with open('Extra/WNT-List.txt') as inputFile:
+        inputLines = inputFile.readlines()
+
+        # check if there is already some output in PDF-URLs-List so it can continue from there
+        with open(outputFile, "r+") as output:
+            outputLines = output.readlines()
+            if len(outputLines) > 0:
+                i = int(outputLines[-1].split(":")[0].replace("\n", "")) + 1
+            lastOutputLine = i
+        print("i = " + str(i))
+
+        # for every line in inputFile it outputs a line in outputFile
+        while i < len(inputLines):
+            print("___________________________________________________")
+            g = open(outputFile, "a")
+            foundPDFs = []
+
+            # try except block to catch the report that occurs when we get blocked by google
+            try:
+                try: # TODO: Collapse try except for 'multiple' ifs
+                    Path('Organisations-URLs-List/Organisation-URLs-List-2020-Combined.txt').touch()
+                    with open('Organisations-URLs-List/Organisation-URLs-List-2020-Combined.txt') as q:
+                        siteDomains = q.readlines()
+                        currentLine = siteDomains[i].split(": ")[1]
+                        currentsite = currentLine.split(",")[0].strip()
+
+                    template = "site:" + currentsite + " (\"Jaarverslag\"|\"Jaarrekening\"|\"WNT-verantwoording\"|\"Verslaggevingsdocument\"|\"Jaarstuk\") filetype:pdf"
+                    organisation_name = inputLines[i].replace("\n", "")
+                    foundPDFs = searchGoogle(year, organisation_name, template)
+                except IndexError:
+                    foundPDFs = []
+                # proper formatting = [number]: [link1], [link2], [link3] \n
+                text = str(i) + ":"
+                for PDF in foundPDFs:
+                    if foundPDFs.index(PDF) != 0:
+                        text = text + ","
+                    text = text + " " + PDF
+                text = text + "\n"
+
+                # write text to file
+                g.write(text)
+                g.close()
+                print(text)
+
+                # show progress on screen
+                print(str(round((i/len(inputLines))*100, 2)) + "% Completed!")
+                print("Total lines this session: " + str(i-int(lastOutputLine)))
+                i = i+1
+                print("Total batches this session: " + str(floor((i-int(lastOutputLine))/116)))
+
+
+            # if we get blocked by google, wait 2hrs20mins to get unblocked
+            except requests.HTTPError:
+                print("Too many requests. Waiting 2hrs and 20min for next batch")
+                nextBatchTime = datetime.now() + timedelta(hours=2.34)
+                print("Next batch scheduled at: " + format(nextBatchTime, '%H:%M:%S'))
+                time.sleep(60*60*2.34)
+    print(str(round((i / len(inputLines)) * 100, 2)) + "% Completed!")
+    return "[---------------------- THE END ------------------------]"
+
+
 if __name__ == "__main__":
-    startProcess(2020)
+    #startProcess(2020)
     #getOrgUrls(2020)
+    storePdfURLsfromOrg(2020)
 
