@@ -15,9 +15,9 @@ import Categories
 import warnings
 import DataAnalyzer
 import re
-import struct
+import struct 
 
-# Final pre- refactored version, 26-11-2021, 14:14
+# Final refactored version, 29-11-2021, 13:07
 
 
 def startProcess(year: int):
