@@ -20,13 +20,14 @@ import struct
 # Final refactored version, 29-11-2021, 13:07
 
 
-def startProcess(year: int):
+def startProcess(year: int, isFirst=True):
     """
     Start of process.
     For every organisation, Process its PDFs
 
     After the loop, retry the failed PDFs once
     :type year: int
+    :type isFirst: Boolean
     :rtype: String
     """
     global isError
@@ -37,7 +38,7 @@ def startProcess(year: int):
     while iteration[0]+1 <= organisationAmount:
         print("current organisation id: " + str(iteration[0]))
         organisation = getOrganisation(iteration)
-        processPDF(year, organisation, iteration)
+        processPDF(year, organisation, iteration, isFirst)
         #: Determine the next PDF
         iteration = getIteration(year)
 
@@ -45,7 +46,7 @@ def startProcess(year: int):
     return "------[THE END]------"
 
 
-def processPDF(year, organisation, iteration):
+def processPDF(year, organisation, iteration, isFirst):
     """
     Manages the process of selection, downloading and decryption of a pdf
     and creation of a report file about that pdf
@@ -66,16 +67,20 @@ def processPDF(year, organisation, iteration):
     pageNumber = 0
 
     #: Get the url of the PDF
-    url = getUrl(iteration, year)
+    url = getUrl(iteration, year, isFirst)
     downloadFile(url)
 
     if not isError:
         is_encrypted = isEncrypted()
+        print(is_encrypted)
         if is_encrypted == 1:
             errorhandler(Error.encryptionError)
         elif is_encrypted == 2:
             errorhandler(Error.EOFError)
-        else:
+        elif is_encrypted == 3:
+            errorhandler(Error.nodocumentError)
+
+        elif is_encrypted == 0:
             try:
                 pageNumber = getPageNumber()
             except PyPDF2.utils.PdfReadError as e:
@@ -165,7 +170,7 @@ def getOrganisation(iteration):
     return organisation
 
 
-def getUrl(coordinates, year):
+def getUrl(coordinates, year, isFirst):
     """
     Gets the year and coordinates and uses those to lookup in PDF-URLs-List-{year}.txt to find the correlating url
     :returns url
@@ -178,7 +183,12 @@ def getUrl(coordinates, year):
     # if it doesnt create the file
     # filename.mkdir(parents=True, exist_ok=True)
 
-    with open("PDF-URLs-List/PDF-URLs-List-%s-first.txt" % year) as file:
+    filename = "PDF-URLs-List/PDF-URLs-List-{0}".format(year)
+    if isFirst:
+        filename = filename + "-first"
+    filename = filename + ".txt"
+
+    with open(filename) as file:
         line = file.readlines()[coordinates[0]].split(":")
         line.remove(line[0])
         if '' in line:
@@ -399,6 +409,8 @@ def isEncrypted():
             return 1
     except (TypeError, ValueError, PyPDF2.utils.PdfReadError):
         return 2
+    except (OSError):
+        return 3
 
 
 def removeHTMLfromPDF(pdf_stream_in: list, contents: bytes):
@@ -451,13 +463,13 @@ def getPageNumber():
         while i < pdf.getNumPages():
             page = pdf.getPage(i).extractText().split(" ")
             realWordScore += sum((itm.lower().count("de") for itm in page))
-            #relevanceScore = page.count("bezoldiging") + page.count("Bezoldiging") + page.count("BEZOLDIGING") + page.count("WNT")
             highscore = 0
             currentScore = sum((itm.lower().count("bezoldiging") for itm in page)) + \
                             sum((itm.lower().count("topfunctionarissen") for itm in page)) + \
                             sum((itm.lower().count("bezoldigingdmaximum") for itm in page)) + \
                             sum((itm.lower().count("wnt") for itm in page))
-
+            # Possible other searchterms that could be added:
+            # WNT-gegevens, dienstbetrekking, deeltijdfactor, normbedrag, WNT-instelling
             totalScore.append(currentScore)
             if currentScore > highscore:
                 highscore = currentScore
@@ -677,9 +689,10 @@ def deleteFolder(year):
 
     coordinates = [math.floor(pdfCounter/3), pdfCounter % 3]
 
-
 if __name__ == '__main__':
     #retryFailedPDFs(2020)
     #cleanDoublesFromList(2020)
-    print(startProcess(2020))
+    print(startProcess(2020, True))
     #deleteFolder(2020)
+    #getTableFromPDF7()
+
