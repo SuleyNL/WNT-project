@@ -57,8 +57,9 @@ def downloadWNTList():
 
 
 def storePdfURLs(year: int):
-    #: This is the main method, it calls searchGoogle() to get links to pdfs
+    # This is the main method, it calls searchGoogle() to get links to pdfs
     # and then outputs them to PDF-URLs-List-{year}.txt
+
     # determine file
     outputFile = "PDF-URLs-List/PDF-URLs-List-%s.txt" % year
     print(outputFile)
@@ -116,7 +117,8 @@ def storePdfURLs(year: int):
 
 def searchGoogle(year: str, name: str, template: str):
 
-    # prepare searchquery before searching, somehow didnt work if it was directly put into the search() function
+    # prepare searchquery before searching,
+    # somehow didnt work if it was directly put into the search() function as a ''-string
     year = "\"" + str(year) + "\""
     name = "\"" + name + "\""
     searchTerm = year + " " + name + " " + template
@@ -394,7 +396,7 @@ def storePdfURLsfromOrg(year: int):
 
             # try except block to catch the report that occurs when we get blocked by google
             try:
-                try: # TODO: Collapse try except for 'multiple' ifs
+                try:  # TODO: Collapse try except for 'multiple' ifs
                     Path('Organisations-URLs-List/Organisation-URLs-List-2020-Combined.txt').touch()
                     with open('Organisations-URLs-List/Organisation-URLs-List-2020-Combined.txt') as q:
                         siteDomains = q.readlines()

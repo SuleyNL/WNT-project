@@ -10,15 +10,18 @@ from pdfminer.pdfpage import PDFPage
 from reportlab.pdfgen.canvas import Canvas
 from collections import Counter
 from enum import Enum
-from distutils.dir_util import copy_tree
+from distutils import dir_util
+import shutil
+
+
 from Categories import *
 
 
-def createRapport(year):
+def createRapport(year, isFirst=True):
     global categories
     global totalOrganisations
     #: Initialise all variables
-    initialiseVariables(year)
+    initialiseVariables(year, isFirst)
 
     #: Categorise all organisations into one of 5 different search categories
     categorise()
@@ -62,18 +65,21 @@ def createRapport(year):
     return "------[THE END]------"
 
 
-def initialiseVariables(currentYear):
+def initialiseVariables(currentYear, isFirst):
     global year
     year = currentYear
 
     global path
     path = "PDFs/{0}/All/".format(year)
+    if isFirst:
+        path = "PDFs/{0}/All first/".format(year)
 
+    path = "PDFs/2020/All first 17-12-2021/"
     global organisationsList
     organisationsList = getOrganisationsList(year)
 
     global PDFsListRaw
-    PDFsListRaw = getPDFsList(year)
+    PDFsListRaw = getPDFsList()
 
     global PDFsListClean
     PDFsListClean = []
@@ -153,7 +159,7 @@ def matrixAtLeastOne(filledMatrix: list, searchTerm: str):
     UniqueMatrix = createEmptyMatrix()
     UniqueOrganisationsList = []
     i = 0
-    organisations = [f.path for f in os.scandir('PDFs/2020/All/')]
+    organisations = [f.path for f in os.scandir(path)]
     for organisation in organisations:
         if not filledMatrix[i]:
             print('PDFs/2020/All/' + organisation)
@@ -180,12 +186,13 @@ def calculatePercentage(partial, total):
     return percentage
 
 
-def getPDFsList(year: int):
+def getPDFsList():
     #: Returns a list of all PDFs
+
     global path
     PDFsList = []
     Path(path).mkdir(parents=True, exist_ok=True)
-    organisations = [f.path for f in os.scandir('PDFs/2020/All/')] #fastest way to get all items in directory: 1ms vs 18+ms
+    organisations = [f.path for f in os.scandir(path)] #fastest way to get all items in directory: 1ms vs 18+ms
     for organisation in organisations:
         for pdf in os.listdir(organisation):
             PDFsList.append(pdf)
@@ -224,18 +231,19 @@ def movePdfs(year):
     for category in categories.get_all_categories():
         print("category: " + category.name)
         for organisation in category.UniqueOrganisationsList:
-            originalPath = "PDFs/{0}/All/{1}".format(year, organisation)
-            newPath = "PDFs/{0}/Categories/{1}/{2}".format(year, category.name, organisation)
-            Path(newPath).mkdir(parents=True, exist_ok=True)
-            #: Move the entire organisation map to the new location
-            copy_tree(originalPath, newPath)
+            # copytree somehow doesnt work on these two organisations, probably because their names are too long.
+            if organisation != "0098 - Divosa, de landelijke vereniging van leidinggevenden van gemeentelijke diensten op het terrein van werk, inkomen en zorg" and organisation != "1620 - Stichting Verdeling Financiële Overheidsbijdragen in het Werk van de Centrales van Overheids- en Onderwijspersoneel":
+                originalPath = path + "{0}".format(organisation)
+                newPath = "PDFs/{0}/Categories/{1}/{2}/".format(year, category.name, organisation)
+                #Path(newPath).mkdir(parents=True, exist_ok=True)
+                #: Move the entire organisation map to the new location
+                shutil.copytree(originalPath, newPath)
 
 
-def standardizeIDs():
-    organisations = [f.path for f in os.scandir('PDFs/2020/All/')] #fastest way to get all items in directory: 1ms vs 18ms
-    pathname = 'PDFs/2020/All/'
+def standardizeIDs(path: str):
+    organisations = [f.path for f in os.scandir(path)] #fastest way to get all items in directory: 1ms vs 18ms
     for organisation in organisations:
-        organisation = organisation.split('/')[-1]
+        organisation = organisation.split('\\')[-1]
 
         id = organisation.split(" - ")[0]
 
@@ -248,8 +256,8 @@ def standardizeIDs():
         elif int(id) < 1000:
             id = "0" + id
 
-        newName = pathname + id + " - " + organisation.split(" - ")[1]
-        organisation = pathname + organisation
+        newName = path + id + " - " + organisation.split(" - ")[1]
+        organisation = path + organisation
 
         os.renames(organisation, newName)
 
@@ -271,5 +279,10 @@ def howManyLinesFilled(filename):
 
 if __name__ == '__main__':
     print(howManyLinesFilled("PDF-URLs-List/PDF-URLs-List-2020-first.txt"))
+    print(howManyLinesFilled("Organisations-URLs-List/Organisation-URLs-List-2020-Almanak.txt"))
+    print(howManyLinesFilled("Organisations-URLs-List/Organisation-URLs-List-2020-drimble.txt"))
     print(howManyLinesFilled("Organisations-URLs-List/Organisation-URLs-List-2020-Combined.txt"))
+
     #print(createRapport(2020))
+
+    #print(len(os.listdir("PDFs/2020/Categories 11-11-2021/Wel WNT")))

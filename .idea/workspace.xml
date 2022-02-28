@@ -1,0 +1,1208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/PyDFScraper.py" line="264" />
+    <bookmark url="file://$PROJECT_DIR$/PyDFScraper.py" description="#: For testing purposes:" line="564" />
+    <bookmark url="file://$PROJECT_DIR$/DataAnalyzer.py" description="organisations = [f.path for f in os.scandir('PDFs/..." line="194" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3dce6a07-cb06-47fb-9940-96d715e77ab7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/PyDFScraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyDFScraper.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>bytes.txt</find>
+      <find>print(&quot;new</find>
+      <find>bytes.</find>
+      <find>centraal bure</find>
+      <find>contents</find>
+      <find>valueE</find>
+      <find>For tes</find>
+      <find>waiting</find>
+      <find>downloaderror</find>
+      <find>stadsgew</find>
+      <find>todo</find>
+      <find>brunss</find>
+      <find>onderhan</find>
+      <find>PDF-URLs-lIST</find>
+      <find>brunssu</find>
+      <find>PDF-URLS-Lis</find>
+      <find>Extra/WNT-List.txt&quot;</find>
+      <find>afval</find>
+      <find>PDF-URLs-List</find>
+      <find>ministerie</find>
+      <find>INDEXERROR</find>
+      <find>touch</find>
+      <find>jaarverslag</find>
+      <find>jaarverslag\</find>
+      <find>OSError</find>
+      <find>pdfimages</find>
+      <find>gegevens</find>
+      <find>rename</find>
+    </findStrings>
+    <dirStrings>
+      <dir>D:\School\Stage\Ministerie Binnenlandse Zaken\WNT-Project</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="development" />
+      </map>
+    </option>
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--follow-tags" />
+        <option name="title" value="Current Branch" />
+      </GitPushTagMode>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/test.txt" />
+        <option value="$PROJECT_DIR$/Spider.py" />
+        <option value="$PROJECT_DIR$/Untitled1.py" />
+        <option value="$PROJECT_DIR$/SiteScraper/SiteScraper/spiders/sites_spider.py" />
+        <option value="$PROJECT_DIR$/PDFscraper/PDFscraper/spiders/Spider.py" />
+        <option value="$PROJECT_DIR$/PDFscraper/PDFscraper/spiders/LinkSpider.py" />
+        <option value="$PROJECT_DIR$/PDFscraper/scanned_links.txt" />
+        <option value="$PROJECT_DIR$/PDFscraper/PDFscraper/spiders/PDFspider.py" />
+        <option value="$PROJECT_DIR$/PDFs-List.txt" />
+        <option value="$PROJECT_DIR$/PDFs-List-2018.txt" />
+        <option value="$PROJECT_DIR$/PDFs-List/PDFs-List-2018.txt" />
+        <option value="$PROJECT_DIR$/output.txt" />
+        <option value="$PROJECT_DIR$/GoogleScraper.py" />
+        <option value="$PROJECT_DIR$/WNT-List.txt" />
+        <option value="$PROJECT_DIR$/PDFScraper.py" />
+        <option value="$PROJECT_DIR$/PDFs-List/PDFs-List-2020.txt" />
+        <option value="$PROJECT_DIR$/Extra/unreadable unencrypted document example" />
+        <option value="$PROJECT_DIR$/DataScraper.py" />
+        <option value="$PROJECT_DIR$/URLs-List/URLs-List-2020.txt" />
+        <option value="$PROJECT_DIR$/WorkingMemory/bytes.txt" />
+        <option value="$PROJECT_DIR$/CategoryNumber.py" />
+        <option value="$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/site-packages/PyPDF2/pdf.py" />
+        <option value="$PROJECT_DIR$/Categories.py" />
+        <option value="$PROJECT_DIR$/Extra/analyzed_results" />
+        <option value="$PROJECT_DIR$/GoogleScraper" />
+        <option value="$PROJECT_DIR$/Organisations-URLs-List/Organisation-URLs-List-2020.txt" />
+        <option value="$PROJECT_DIR$/Organisations-URLs-List/Organisation-URLs-List-2020-Almanak.txt" />
+        <option value="$PROJECT_DIR$/Organisations-URLs-List/Organisation-URLs-List-2020-drimble.txt" />
+        <option value="$PROJECT_DIR$/PDF-URLs-List/PDF-URLs-List-2020-first.txt" />
+        <option value="$PROJECT_DIR$/Extra/WNT-List.txt" />
+        <option value="$PROJECT_DIR$/All_code_compressed.py" />
+        <option value="$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/site-packages/pytesseract/pytesseract.py" />
+        <option value="$PROJECT_DIR$/PdfDataMiner.py" />
+        <option value="$PROJECT_DIR$/Extra/notes.txt" />
+        <option value="$PROJECT_DIR$/WebScraper.py" />
+        <option value="$PROJECT_DIR$/PyDFScraper.py" />
+        <option value="$PROJECT_DIR$/DataAnalyzer.py" />
+      </list>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-310" />
+    <option name="y" value="470" />
+    <option name="width" value="1940" />
+    <option name="height" value="1050" />
+  </component>
+  <component name="ProjectId" id="25jXV8hY0Xzh45pG8RA0S08KVid" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="WNT-Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WNT-Project" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WNT-Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WNT-Project" type="462c0819:PsiDirectoryNode" />
+              <item name="Extra" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WNT-Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WNT-Project" type="462c0819:PsiDirectoryNode" />
+              <item name="Organisations-URLs-List" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WNT-Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WNT-Project" type="462c0819:PsiDirectoryNode" />
+              <item name="PDF-URLs-List" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WNT-Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WNT-Project" type="462c0819:PsiDirectoryNode" />
+              <item name="PDFs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WNT-Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WNT-Project" type="462c0819:PsiDirectoryNode" />
+              <item name="PDFs" type="462c0819:PsiDirectoryNode" />
+              <item name="2020" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\School\Stage\Ministerie Binnenlandse Zaken\WNT-Project\PDFs\2020" />
+      <recent name="D:\School\Stage\Ministerie Binnenlandse Zaken\WNT-Project" />
+      <recent name="D:\School\Stage\Ministerie Binnenlandse Zaken\WNT-Project\Extra\poppler-21.12.0" />
+      <recent name="D:\School\Stage\Ministerie Binnenlandse Zaken\WNT-Project\PDFs" />
+      <recent name="D:\School\Stage\WNT-Project" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\School\Stage\Ministerie Binnenlandse Zaken\WNT-Project\Extra" />
+      <recent name="D:\School\Stage\Ministerie Binnenlandse Zaken\WNT-Project\Extra\lib" />
+      <recent name="D:\School\Stage\WNT-Project\Extra" />
+      <recent name="D:\School\Stage\WNT-Project" />
+      <recent name="D:\School\Stage\WNT-Project\PDFs-List" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.DataAnalyzer">
+    <configuration name="All_code_compressed" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="WNT-Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\msi\AppData\Local\Programs\Python\Python38\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/All_code_compressed.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="DataAnalyzer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="WNT-Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\msi\AppData\Local\Programs\Python\Python38\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DataAnalyzer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="PdfDataMiner" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="WNT-Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\msi\AppData\Local\Programs\Python\Python38\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PdfDataMiner.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="PyDFScraper" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="WNT-Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\msi\AppData\Local\Programs\Python\Python38\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PyDFScraper.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="WebScraper" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="WNT-Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\msi\AppData\Local\Programs\Python\Python38\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WebScraper.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="WNT-Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\msi\AppData\Local\Programs\Python\Python38\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.DataAnalyzer" />
+        <item itemvalue="Python.PyDFScraper" />
+        <item itemvalue="Python.PdfDataMiner" />
+        <item itemvalue="Python.All_code_compressed" />
+        <item itemvalue="Python.WebScraper" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3dce6a07-cb06-47fb-9940-96d715e77ab7" name="Default Changelist" comment="" />
+      <created>1631004701279</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1631004701279</updated>
+    </task>
+    <task id="LOCAL-00001" summary="start new project">
+      <created>1631262095353</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1631262095353</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added comments&#10;&#10;Program can now create new files if they do not exist&#10;&#10;Program can now automatically search for PDF's for the entire list, just give it the year&#10;&#10;Tested various methods for webscraping but still getting blocked by google&#10;TODO: webscraping method without getting blocked by google">
+      <created>1631286181157</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1631286181157</updated>
+    </task>
+    <task id="LOCAL-00003" summary="entire commit has been deleted, this is what is left">
+      <created>1631789569328</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1631789569328</updated>
+    </task>
+    <task id="LOCAL-00004" summary="GoogleScraper can now be ran in the background, scraped first batch">
+      <created>1631791814824</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1631791814824</updated>
+    </task>
+    <task id="LOCAL-00005" summary="First commit">
+      <created>1631792711023</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1631792711023</updated>
+    </task>
+    <task id="LOCAL-00006" summary="First commit">
+      <created>1631792737573</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1631792737573</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Final touches to GoogleScraper">
+      <created>1631793654927</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1631793654927</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Final touches to GoogleScraper">
+      <created>1631793946799</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1631793946799</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Made a begin to PDFScraper&#10;GoogleScraper can now continue where it was left">
+      <created>1631811011193</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1631811011193</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Made a begin to PDFScraper&#10;GoogleScraper can now continue where it was left">
+      <created>1631811028061</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1631811028061</updated>
+    </task>
+    <task id="LOCAL-00011" summary="deleted unnecessary files">
+      <created>1631811154501</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1631811154501</updated>
+    </task>
+    <task id="LOCAL-00012" summary="generateFile() doesnt work yet&#10;&#10;errorhandling still needs to be done">
+      <created>1631818060549</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1631818060549</updated>
+    </task>
+    <task id="LOCAL-00013" summary="generateFile() works!!!&#10;errorhandling is done, can be expanded">
+      <created>1631830591362</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1631830591362</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Deleted unnecessary files">
+      <created>1631860224606</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1631860224606</updated>
+    </task>
+    <task id="LOCAL-00015" summary="PyPDF version of the PDFScraper is done.&#10;Will have to develop another version because PyPDF is inconsistent in it's output; not good for reliable statistics">
+      <created>1631868191017</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1631868191017</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Added DataScraper.py file,&#10;Ordered the maps and files in WNT-Project">
+      <created>1631871206570</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1631871206570</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Added lines to PDFs-List&#10;Added analysis results in Extra/notes.txt">
+      <created>1632040489666</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1632040489682</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Added logging of total batches&#10;Made overall Logging experience more user friendly">
+      <created>1632086094134</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1632086094134</updated>
+    </task>
+    <task id="LOCAL-00019" summary="more efficient writing system when retrieving all WNT orgs, now only writes once&#10;&#10;abbreviations in organisation names cause an error in file names, so all organisation names with a colon abbreviation have been replaced by a parenthesis abbreviation&#10;&#10;Data-scraper exists and can scrape data analysis results from the mining programs GoogleScraper and PyDFScraper">
+      <created>1632899286381</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1632899286381</updated>
+    </task>
+    <task id="LOCAL-00020" summary="added professional error enums&#10;&#10;added datetime to the report&#10;&#10;each pdf now has a report, also the ones with pages found&#10;&#10;eliminated the connectionLost bug by waiting up to 1 minute for each downloading pdf">
+      <created>1632925598200</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1632925598200</updated>
+    </task>
+    <task id="LOCAL-00021" summary="added comments to GoogleScraper&#10;&#10;added decryption to PDFScraper&#10;&#10;streamlined code of PDFScraper&#10;&#10;first and last 100 bytes are added to reportpage&#10;&#10;extra EOFerrors have been caught in PDFScraper&#10;&#10;DataScraper now has Category class and can categorise all organisations with relevant matrixes and lists">
+      <created>1633363993097</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1633363993097</updated>
+    </task>
+    <task id="LOCAL-00022" summary="\ is now also seen as a dash by GoogleScraper DownloadWNT&#10;&#10;added comments&#10;&#10;added categories&#10;&#10;all organisations belonging to certain categories are now in their own map&#10;&#10;changed mapping structure &#10;&#10;PDFscraper now finishes and runs without errors">
+      <created>1633504832599</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1633504832599</updated>
+    </task>
+    <task id="LOCAL-00023" summary="changed PyDFscraper architecture to be compatible with singe file handling&#10;&#10;DataAnalyzer now outputs more practical user friendly data&#10;&#10;Created Categories Class File&#10;&#10;Refined downloading of files&#10;&#10;Added realwordScore to determine if document can be read or not&#10;&#10;Added retryFailedPDFs() to get higher total PDFs read ratio">
+      <created>1634037579620</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1634037579620</updated>
+    </task>
+    <task id="LOCAL-00024" summary="GoogleScraper replaced by WebScraper, now also searches Almanak and Drimble for website names through HTTP requests. &#10;&#10;Encryption enhanced, clearly categorised.&#10;Encryption performance is in a local optimum, stopping for now.&#10;&#10;DataAnalyzer improved, turned out it was wildly inaccurate at first. &#10;&#10;Fixed empty line errors&#10;&#10;added a tryFailedPdfs extension">
+      <created>1637237156079</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1637237156079</updated>
+    </task>
+    <task id="LOCAL-00025" summary="GoogleScraper replaced by WebScraper, now also searches Almanak and Drimble for website names through HTTP requests. &#10;&#10;Encryption enhanced, clearly categorised.&#10;Encryption performance is in a local optimum, stopping for now.&#10;&#10;DataAnalyzer improved, turned out it was wildly inaccurate at first. &#10;&#10;Fixed empty line errors&#10;&#10;added a tryFailedPdfs extension">
+      <created>1637237207979</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1637237207979</updated>
+    </task>
+    <task id="LOCAL-00026" summary="# Final pre-refactoring version &#10;added SearchAlmanak() and SearchDrimble()&#10;added howManyLinesFilled analyser&#10;Almanak and Drimble org urls will be stored in files aswell">
+      <created>1637932736093</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1637932736094</updated>
+    </task>
+    <task id="LOCAL-00027" summary="# Final pre-refactoring version">
+      <created>1637934212413</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1637934212413</updated>
+    </task>
+    <task id="LOCAL-00028" summary="initialising refactor version">
+      <created>1638187717064</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1638187717065</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Structure" order="0" sideWeight="0.50329673" side_tool="true" weight="0.25100672" />
+      <window_info id="Favorites" order="1" sideWeight="0.50329673" side_tool="true" weight="0.25100672" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.4967033" visible="true" weight="0.25503355" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49261746" visible="true" weight="0.1203966" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3895184" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.48843357" weight="0.5042493" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.42492917" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5073826" side_tool="true" weight="0.3555241" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.3286119" />
+      <window_info anchor="bottom" id="Messages" order="11" />
+      <window_info anchor="bottom" id="Thumbnails" order="12" weight="0.3286119" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="aiXcoder" order="3" weight="0.3295302" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Structure" order="0" sideWeight="0.50329673" side_tool="true" weight="0.25100672" />
+      <window_info id="Favorites" order="1" sideWeight="0.50329673" side_tool="true" weight="0.25100672" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.4967033" visible="true" weight="0.20134228" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49261746" visible="true" weight="0.33144477" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.48725212" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.48843357" weight="0.5042493" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3286119" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5073826" side_tool="true" weight="0.3555241" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.3286119" />
+      <window_info anchor="bottom" id="Messages" order="11" />
+      <window_info anchor="bottom" id="Thumbnails" order="12" weight="0.3286119" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="aiXcoder" order="3" weight="0.3295302" />
+    </layout-to-restore>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="start new project" />
+    <MESSAGE value="Added comments&#10;&#10;Program can now create new files if they do not exist&#10;&#10;Program can now automatically search for PDF's for the entire list, just give it the year&#10;&#10;Tested various methods for webscraping but still getting blocked by google&#10;TODO: webscraping method without getting blocked by google" />
+    <MESSAGE value="Added automatic timer for 2.34 hours so scraping can take place in background&#10;&#10;Created system of categorising files&#10;&#10;Can now extract 4 pages out of necessary files&#10;&#10;Checks whether pdf contains searchterms, if not it creates noresults.pdf file&#10;&#10;Creates deadlink.pdf file if link is inaccessible&#10;&#10;5 types of errors now are getting tried and catched" />
+    <MESSAGE value="entire commit has been deleted, this is what is left" />
+    <MESSAGE value="GoogleScraper can now be ran in the background, scraped first batch" />
+    <MESSAGE value="First commit" />
+    <MESSAGE value="Final touches to GoogleScraper" />
+    <MESSAGE value="Made a begin to PDFScraper&#10;GoogleScraper can now continue where it was left" />
+    <MESSAGE value="deleted unnecessary files" />
+    <MESSAGE value="generateFile() doesnt work yet&#10;&#10;errorhandling still needs to be done" />
+    <MESSAGE value="generateFile() works!!!&#10;errorhandling is done, can be expanded" />
+    <MESSAGE value="Deleted unnecessary files" />
+    <MESSAGE value="PyPDF version of the PDFScraper is done.&#10;Will have to develop another version because PyPDF is inconsistent in it's output; not good for reliable statistics" />
+    <MESSAGE value="Added DataScraper.py file,&#10;Ordered the maps and files in WNT-Project" />
+    <MESSAGE value="Added lines to PDFs-List&#10;Added analysis results in Extra/notes.txt" />
+    <MESSAGE value="Added logging of total batches&#10;Made overall Logging experience more user friendly" />
+    <MESSAGE value="more efficient writing system when retrieving all WNT orgs, now only writes once&#10;&#10;abbreviations in organisation names cause an error in file names, so all organisation names with a colon abbreviation have been replaced by a parenthesis abbreviation&#10;&#10;Data-scraper exists and can scrape data analysis results from the mining programs GoogleScraper and PyDFScraper" />
+    <MESSAGE value="added professional error enums&#10;&#10;added datetime to the report&#10;&#10;each pdf now has a report, also the ones with pages found&#10;&#10;eliminated the connectionLost bug by waiting up to 1 minute for each downloading pdf" />
+    <MESSAGE value="added comments to GoogleScraper&#10;&#10;added decryption to PDFScraper&#10;&#10;streamlined code of PDFScraper&#10;&#10;first and last 100 bytes are added to reportpage&#10;&#10;extra EOFerrors have been caught in PDFScraper&#10;&#10;DataScraper now has Category class and can categorise all organisations with relevant matrixes and lists" />
+    <MESSAGE value="\ is now also seen as a dash by GoogleScraper DownloadWNT&#10;&#10;added comments&#10;&#10;added categories&#10;&#10;all organisations belonging to certain categories are now in their own map&#10;&#10;changed mapping structure &#10;&#10;PDFscraper now finishes and runs without errors" />
+    <MESSAGE value="changed PyDFscraper architecture to be compatible with singe file handling&#10;&#10;DataAnalyzer now outputs more practical user friendly data&#10;&#10;Created Categories Class File&#10;&#10;Refined downloading of files&#10;&#10;Added realwordScore to determine if document can be read or not&#10;&#10;Added retryFailedPDFs() to get higher total PDFs read ratio" />
+    <MESSAGE value="GoogleScraper replaced by WebScraper, now also searches Almanak and Drimble for website names through HTTP requests. &#10;&#10;Encryption enhanced, clearly categorised.&#10;Encryption performance is in a local optimum, stopping for now.&#10;&#10;DataAnalyzer improved, turned out it was wildly inaccurate at first. &#10;&#10;Fixed empty line errors&#10;&#10;added a tryFailedPdfs extension" />
+    <MESSAGE value="# Final pre-refactoring version &#10;added SearchAlmanak() and SearchDrimble()&#10;added howManyLinesFilled analyser&#10;Almanak and Drimble org urls will be stored in files aswell" />
+    <MESSAGE value="# Final pre-refactoring version" />
+    <MESSAGE value="initialising refactor version" />
+    <option name="LAST_COMMIT_MESSAGE" value="initialising refactor version" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/site-packages/tabula/io.py</url>
+          <line>78</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/site-packages/tabula/io.py</url>
+          <line>74</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/PdfDataMiner.py</url>
+          <line>10</line>
+          <option name="timeStamp" value="101" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/PdfDataMiner.py</url>
+          <line>17</line>
+          <option name="timeStamp" value="136" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/DataAnalyzer.py</url>
+          <line>244</line>
+          <option name="timeStamp" value="141" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/DataAnalyzer.py</url>
+          <line>234</line>
+          <option name="timeStamp" value="148" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/DataAnalyzer.py</url>
+          <line>235</line>
+          <option name="timeStamp" value="153" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>originalPath</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>def f():
+    for g in os.scandir(path):
+        return g
+
+f()</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>def f():
+    for g in os.scandir(path):
+        return g</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>for f in os.scandir(path):
+    print(f)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>for f in os.scandir(path):
+    return f</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>for f in os.scandir(path)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>os.scandir(path)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>table[:]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>table</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+    </expressions>
+    <expressions id="watch">
+      <expression>
+        <expression-string>1</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>contents</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>table.index(row)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>row.index()</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>row.index</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>row</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>table.iloc[:, 0]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>table.iloc[0, :]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>table.iloc[0, 0]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>table[0, 0]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>table[0,0]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>table[0]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Extra/analyzed_results">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="114" column="17" selection-start-line="114" selection-start-column="17" selection-end-line="114" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/site-packages/bs4/element.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="1416" selection-start-line="1416" selection-end-line="1416" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/site-packages/requests/exceptions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/site-packages/googlesearch/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-217">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Organisations-URLs-List/Organisation-URLs-List-2020-drimble.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-646">
+          <caret line="4" column="17" lean-forward="true" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/site-packages/camelot/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="33" lean-forward="true" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+          <folding>
+            <element signature="e#25#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/site-packages/camelot/handlers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1156">
+          <caret line="82" column="33" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/All_code_compressed.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="353" selection-start-line="353" selection-end-line="353" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#332#2515#0" />
+            <element signature="e#2543#6524#0" />
+            <element signature="e#6560#15627#0" />
+            <element signature="e#15655#16792#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/site-packages/PyPDF2/generic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="177" selection-start-line="177" selection-end-line="177" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/site-packages/PyPDF2/pdf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="1282" column="16" selection-start-line="1282" selection-start-column="16" selection-end-line="1282" selection-end-column="16" />
+          <folding>
+            <element signature="e#1911#1924#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/site-packages/requests/api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="49">
+          <caret line="63" column="4" selection-start-line="63" selection-start-column="4" selection-end-line="63" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/site-packages/pdfminer/high_level.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="149" column="35" selection-start-line="149" selection-start-column="35" selection-end-line="149" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Extra/WNT-List.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="43" selection-start-line="2" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/site-packages/tabula/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="57" selection-start-line="2" selection-start-column="57" selection-end-line="2" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/site-packages/tabula/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="16" column="38" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/site-packages/win32com/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#47#71#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.3/system/python_stubs/-1349807192/_winapi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="201" column="30" lean-forward="true" selection-start-line="201" selection-start-column="30" selection-end-line="201" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/site-packages/tabula/io.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-187">
+          <caret line="56" column="15" selection-start-line="56" selection-start-column="15" selection-end-line="56" selection-end-column="15" />
+          <folding>
+            <element signature="e#652#664#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="309" selection-start-line="309" selection-end-line="309" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Extra/poppler-21.12.0/cpp/tests/fuzzing/doc_fuzzer.cc">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Extra/poppler-21.12.0/utils/pdfinfo.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2142" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Extra/poppler-21.12.0/README-XPDF">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2125">
+          <caret line="125" column="27" lean-forward="true" selection-start-line="125" selection-start-column="27" selection-end-line="125" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Extra/poppler-21.12.0/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_table.jpg" />
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.3/system/python_stubs/-1349807192/cv2/cv2/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122468">
+          <caret line="7221" column="55" selection-start-line="7221" selection-start-column="55" selection-end-line="7221" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/site-packages/pytesseract/pytesseract.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-256">
+          <caret line="239" column="51" selection-start-line="239" selection-start-column="51" selection-end-line="239" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Extra/poppler-21.12.0/INSTALL">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/subprocess.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="1306" selection-start-line="1306" selection-end-line="1306" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/site-packages/pandas/core/series.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9078">
+          <caret line="671" selection-start-line="671" selection-end-line="671" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/site-packages/pandas/util/_decorators.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="303" selection-start-line="303" selection-end-line="303" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.3/system/python_stubs/-1349807192/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="5220" column="8" selection-start-line="5220" selection-start-column="8" selection-end-line="5220" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/site-packages/pandas/core/generic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="675" selection-start-line="675" selection-end-line="675" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/contextlib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="356" selection-start-line="356" selection-end-line="356" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/site-packages/pandas/core/indexing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="923" selection-start-line="923" selection-end-line="923" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/site-packages/pandas/core/common.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="178" selection-start-line="178" selection-end-line="178" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/site-packages/pandas/core/indexes/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="4603" selection-start-line="4603" selection-end-line="4603" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/site-packages/pandas/core/frame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="3395" selection-start-line="3395" selection-end-line="3395" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/site-packages/pandas/core/internals/blocks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="349" selection-start-line="349" selection-end-line="349" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/site-packages/pandas/core/internals/managers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="985" selection-start-line="985" selection-end-line="985" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PdfDataMiner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-323">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hs_err_pid3352.log" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/site-packages/PyPDF2/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="255" selection-start-line="255" selection-end-line="255" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDF-URLs-List/PDF-URLs-List-2020.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="51" selection-start-line="3" selection-start-column="51" selection-end-line="3" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Categories.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+          <folding>
+            <element signature="e#341#554#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PDF-URLs-List/PDF-URLs-List-2020-first.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1428">
+          <caret line="84" column="3" selection-start-line="84" selection-start-column="3" selection-end-line="84" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebScraper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="442" column="21" selection-start-line="442" selection-start-column="21" selection-end-line="442" selection-end-column="21" />
+          <folding>
+            <element signature="e#114#125#0" expanded="true" />
+            <element signature="e#468#1416#0" />
+            <element signature="e#1452#4132#0" />
+            <element signature="e#4195#4651#0" />
+            <element signature="e#4687#6751#0" />
+            <element signature="e#6785#8920#0" />
+            <element signature="e#8970#12850#0" />
+            <element signature="e#12900#17333#0" />
+            <element signature="e#17369#17422#0" />
+            <element signature="e#17465#20748#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyDFScraper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="491" column="34" selection-start-line="491" selection-start-column="34" selection-end-line="491" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Organisations-URLs-List/Organisation-URLs-List-2020-Combined.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-28497">
+          <caret line="197" column="9" selection-start-line="197" selection-start-column="9" selection-end-line="197" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Organisations-URLs-List/Organisation-URLs-List-2020-Almanak.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-31628">
+          <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataAnalyzer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-84">
+          <caret line="266" column="4" selection-start-line="266" selection-start-column="4" selection-end-line="266" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Extra/notes.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-166">
+          <caret line="148" column="11" lean-forward="true" selection-start-line="148" selection-start-column="11" selection-end-line="148" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

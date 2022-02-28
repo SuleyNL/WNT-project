@@ -16,7 +16,7 @@ Even some organisations that are labeled as results, may have no real results be
 
 Only download all pages if its needed
 Stackoverflow account maken, vragen stellen, laten zien wat ik al heb gedaan
-TODO: output van programma kan gewoon in excel sheet
+DONE: output van programma kan gewoon in excel sheet
 
 IT coordinator:
 applicaties heb ik nodig
@@ -49,15 +49,13 @@ PyDFScraper scrapes 110 pdf's per minute
 estimated time for all pdfs would be 52 minutes
 
 
-TODO: Check for %%EO in Geen resultaten documents that arent read
-TODO: Algemene planning tot eind stage per product
-TODO: mail sturen potentiele stagebegeleider
+DONE: Check for %%EO in Geen resultaten documents that arent read
+DONE: Algemene planning tot eind stage per product
+DONE: mail sturen potentiele stagebegeleider
 TODO: air-quotes die je dwingen om te documenteren pycharm - linting - compiler/interpreter codechecking
 DONE: Alle errors, searchresults en categories kunnen in èèn gezamenlijke aparte file/class
 
 DONE: COTH bijlage conceptverslag
-TODO: Second best noteren
-TODO: https://almanak.overheid.nl/ zoeken voor site
 TODO: site:https://www.abg.nl filetype:pdf jaarverslag #binnen de site zoeken voor pdf
 TODO: Checken voor mezelf wat nodig is voor een goed cijfer, Floris een bericht sturen om te vragen of ik het goed doe
 TODO: Zoek query noteren in PDFreport
@@ -98,10 +96,6 @@ bedrijfnederland.nl         -> ?? onbereikbaar
 
 Overheidsinstanties:
 almanak.overheid.nl
-
-TODO: Jan-willem vragen om een casus toezichtsonderzoek indien het hem uitkomt met tijd voor mij
-TODO: Organisatie 740 heet 'recreatieschap' dit is geen volledige naam. Zoek naast de eigen naaam ook plaatsnamen om dit te voorkomen
-
 ________________________
 GET https://drimble.nl/bedrijfzoek.php?sbi=0&regio=0&input=liander%20nv HTTP/1.1
 
@@ -140,23 +134,53 @@ ____________________________
 
 Arnold's programma berekent de co2 kosten van verschillende keuzes van transport naar werk
 
-TODO: Vragen aan Arnold: Zou jij het aanraden met database te werken? ipv georganiseerde mappenstructuur.
-TODO: pro's: schaalbaar en overal toegankelijk, makkelijk overdraagbaar,
-TODO: con's: over het internet maakt het langzamer, kost tijd om in te richten, niet nodig voor kleinschalig opdracht, alleen indien uitschalen naar 10x deze grootte
-TODO: antw: Lokale database, postgres, psycopg2 als interface
-
-TODO: Rinze mail sturen over overheid.nl filter WNT aanzetten met volledige lijst
-
-TODO: Tip: elke fase een andere file
+DONE: Vragen aan Arnold: Zou jij het aanraden met database te werken? ipv georganiseerde mappenstructuur.
+DONE: pro's: schaalbaar en overal toegankelijk, makkelijk overdraagbaar,
+DONE: con's: over het internet maakt het langzamer, kost tijd om in te richten, niet nodig voor kleinschalig opdracht, alleen indien uitschalen naar 10x deze grootte
+TODO: antw: Lokale database, postgres, psycopg2 als interface, anaconda install
+TODO: Anaconda heb je ook op ODC Noord
+TODO: Jupyter Notebook Tip: elke fase een andere file
 TODO: Tip: mogelijk .py naar .epmb teurg
 TODO: Visual Studio Code downloaden. deze translate goed naar notebook en terug, op eigen laptop
 TODO: Python code naar mezelf mailen in .txt of zip
-TODO: Gitlab connected aan jupiter shell
+TODO: Gitlab connected aan jupyter shell
 TODO: commandline git interface is wat je moet gebruiken voor git+shell
+
 TODO: ODC Noord = flex2.rijk.nl > light voor webapp > Inloggen ODC Noord
-TODO: contact opnemen werkgever voor ODC Noord
-TODO: Helpdesk BZK bellen voor eigen laptop
+TODO: DuckduckGo of startpage gebruiken als zoekmachine
+
+TODO: ODC NOORD moeten zij dan ook hebben en 1 file met parameters de geimport wordt door de code
+TODO: Lezen en schrijven van postgres tabellen in python in jupyter. code is op gitlab
 
 // OPTIMALISATIE VAN SCRAPER //
 TODO: check in top10 searchresults of de woord jaarrekening/jaarverslag voorkomt in pdf title
 TODO: check of organisatienaam voorkomt in pdf.
+TODO: check voor roepnaam naast officiele naam
+TODO: Organisatie 740 heet 'recreatieschap' dit is geen volledige naam. Zoek naast de eigen naaam ook plaatsnamen om dit te voorkomen
+
+// EMAIL ADRESSEN //
+TODO: WNT@minbzk.nl
+DONE: helpdesk ict vragen om mijn tel. email en pc
+DONE: Eerst iemand van helpdesk ict vragen of ik geautomatiseerd mails kan/mag versturen en anders iemand van bedrijfsvoering Robert Taal, Pim manzoli
+TODO: Rinze vragen over de mailings
+
+//RINZE//
+DONE: Kolom grondslag moet 1.2.1.h ministerschap  als nieuwe rubriek
+TODO: Rinze mail sturen over almanak.overheid.nl filter WNT aanzetten met volledige lijst
+
+
+____________________________
+
+'first priority' data:
+33.49% heeft een website, 66.51% heeft geen website
+
+12.92% heeft wnt                                            38.5%
+3.34% geen wnt                                              10%
+17.49% (= 84% onleesbaar - 66.51% zonder site) onleesbaar   52.2%
+
+wel/geen wnt ratio = 79/21 wel/niet
+____________________________
+Tabellen met vergelijkende cijfers:
+A C (d) E F(not Gegevens overschrijding or Gegevens per WNT-instelling) (g) (2) 3
+
+
