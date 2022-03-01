@@ -9,8 +9,8 @@
     <bookmark url="file://$PROJECT_DIR$/DataAnalyzer.py" description="organisations = [f.path for f in os.scandir('PDFs/..." line="194" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3dce6a07-cb06-47fb-9940-96d715e77ab7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/PyDFScraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyDFScraper.py" afterDir="false" />
+    <list default="true" id="3dce6a07-cb06-47fb-9940-96d715e77ab7" name="Default Changelist" comment="Data lost&#10;This is the restoration of what is left&#10;&#10;added possible additional searchterms in PyDFScraper.py">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -542,7 +542,21 @@
       <option name="project" value="LOCAL" />
       <updated>1638187717065</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Data lost&#10;This is the restoration of what is left&#10;&#10;added possible additional searchterms in PyDFScraper.py">
+      <created>1646052418272</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1646052418273</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Data lost&#10;This is the restoration of what is left&#10;&#10;added possible additional searchterms in PyDFScraper.py">
+      <created>1646052530244</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1646052530244</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TodoView">
@@ -628,7 +642,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="start new project" />
     <MESSAGE value="Added comments&#10;&#10;Program can now create new files if they do not exist&#10;&#10;Program can now automatically search for PDF's for the entire list, just give it the year&#10;&#10;Tested various methods for webscraping but still getting blocked by google&#10;TODO: webscraping method without getting blocked by google" />
     <MESSAGE value="Added automatic timer for 2.34 hours so scraping can take place in background&#10;&#10;Created system of categorising files&#10;&#10;Can now extract 4 pages out of necessary files&#10;&#10;Checks whether pdf contains searchterms, if not it creates noresults.pdf file&#10;&#10;Creates deadlink.pdf file if link is inaccessible&#10;&#10;5 types of errors now are getting tried and catched" />
     <MESSAGE value="entire commit has been deleted, this is what is left" />
@@ -653,7 +666,8 @@
     <MESSAGE value="# Final pre-refactoring version &#10;added SearchAlmanak() and SearchDrimble()&#10;added howManyLinesFilled analyser&#10;Almanak and Drimble org urls will be stored in files aswell" />
     <MESSAGE value="# Final pre-refactoring version" />
     <MESSAGE value="initialising refactor version" />
-    <option name="LAST_COMMIT_MESSAGE" value="initialising refactor version" />
+    <MESSAGE value="Data lost&#10;This is the restoration of what is left&#10;&#10;added possible additional searchterms in PyDFScraper.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Data lost&#10;This is the restoration of what is left&#10;&#10;added possible additional searchterms in PyDFScraper.py" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
