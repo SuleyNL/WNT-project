@@ -7,7 +7,7 @@ import PyPDF2
 from PyPDF2 import PdfFileReader, PdfFileWriter, utils
 from pathlib import Path
 import pikepdf
-from pdfminer.pdfpage import PDFPage
+#from pdfminer.pdfpage import PDFPage
 from reportlab.pdfgen.canvas import Canvas
 from enum import Enum
 from Categories import Error
@@ -465,9 +465,12 @@ def getPageNumber():
             realWordScore += sum((itm.lower().count("de") for itm in page))
             highscore = 0
             currentScore = sum((itm.lower().count("bezoldiging") for itm in page)) + \
-                            sum((itm.lower().count("topfunctionarissen") for itm in page)) + \
-                            sum((itm.lower().count("bezoldigingdmaximum") for itm in page)) + \
-                            sum((itm.lower().count("wnt") for itm in page))
+                            sum((itm.lower().count("topfunctionaris") for itm in page)) + \
+                           sum((itm.lower().count("topfunctionarissen") for itm in page)) + \
+                           sum((itm.lower().count("bezoldigingsmaximum") for itm in page)) + \
+                           sum((itm.lower().count("onbezoldigd") for itm in page)) + \
+                           sum((itm.lower().count("deeltijdfactor") for itm in page)) + \
+                           sum((itm.lower().count("functiegegeve ns") for itm in page))
             # Possible other searchterms that could be added:
             # WNT-gegevens, dienstbetrekking, deeltijdfactor, normbedrag, WNT-instelling
             totalScore.append(currentScore)
@@ -544,7 +547,7 @@ def generateFile(pageNumber, year, organisation, iteration, url):
     today = datetime.datetime.strptime(str(datetime.date.today()), "%Y-%m-%d")
 
     canvas.drawString(20, 720, "Moment van scraping: ")
-    canvas.drawString(180, 720, str(today.day) + " " + getMonthName[today.month-1] + " " + str(today.year))
+    canvas.drawString(180, 720, str(today.day) + " " + getMonthName[today.month-1] + " " + str(today.year) + ", ")
 
     canvas.drawString(20, 700, "")
     canvas.drawString(180, 700, str(format(datetime.datetime.now(), '%H:%M:%S')))
@@ -692,7 +695,7 @@ def deleteFolder(year):
 if __name__ == '__main__':
     #retryFailedPDFs(2020)
     #cleanDoublesFromList(2020)
-    print(startProcess(2020, True))
+    print(startProcess(2020, False))
     #deleteFolder(2020)
     #getTableFromPDF7()
 

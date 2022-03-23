@@ -25,6 +25,7 @@ def createRapport(year, isFirst=True):
 
     #: Categorise all organisations into one of 5 different search categories
     categorise()
+
     encryptedpercentage = 0
     geenWNTpercentage = 0
     welWNTpercentage = 0
@@ -60,7 +61,7 @@ def createRapport(year, isFirst=True):
 
     print(categories[Categories.encryption.value].amount)
     '''
-    movePdfs(year)
+    #movePdfs(year)
 
     return "------[THE END]------"
 
@@ -74,7 +75,6 @@ def initialiseVariables(currentYear, isFirst):
     if isFirst:
         path = "PDFs/{0}/All first/".format(year)
 
-    path = "PDFs/2020/All first 17-12-2021/"
     global organisationsList
     organisationsList = getOrganisationsList(year)
 
@@ -243,7 +243,7 @@ def movePdfs(year):
 def standardizeIDs(path: str):
     organisations = [f.path for f in os.scandir(path)] #fastest way to get all items in directory: 1ms vs 18ms
     for organisation in organisations:
-        organisation = organisation.split('\\')[-1]
+        organisation = organisation.split('/')[-1]
 
         id = organisation.split(" - ")[0]
 
@@ -278,11 +278,11 @@ def howManyLinesFilled(filename):
 
 
 if __name__ == '__main__':
-    print(howManyLinesFilled("PDF-URLs-List/PDF-URLs-List-2020-first.txt"))
-    print(howManyLinesFilled("Organisations-URLs-List/Organisation-URLs-List-2020-Almanak.txt"))
-    print(howManyLinesFilled("Organisations-URLs-List/Organisation-URLs-List-2020-drimble.txt"))
-    print(howManyLinesFilled("Organisations-URLs-List/Organisation-URLs-List-2020-Combined.txt"))
+    #print(howManyLinesFilled("PDF-URLs-List/PDF-URLs-List-2020-first.txt"))
+    #print(howManyLinesFilled("Organisations-URLs-List/Organisation-URLs-List-2020-Almanak.txt"))
+    #print(howManyLinesFilled("Organisations-URLs-List/Organisation-URLs-List-2020-drimble.txt"))
+    #print(howManyLinesFilled("Organisations-URLs-List/Organisation-URLs-List-2020-Combined.txt"))
 
-    #print(createRapport(2020))
+    print(createRapport(2020, False))
 
     #print(len(os.listdir("PDFs/2020/Categories 11-11-2021/Wel WNT")))

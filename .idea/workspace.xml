@@ -10,7 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3dce6a07-cb06-47fb-9940-96d715e77ab7" name="Default Changelist" comment="Data lost&#10;This is the restoration of what is left&#10;&#10;added possible additional searchterms in PyDFScraper.py">
+      <change beforePath="$PROJECT_DIR$/.idea/WNT-Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WNT-Project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAnalyzer.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataAnalyzer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Extra/notes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Extra/notes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PDF-URLs-List/PDF-URLs-List-2020-first.txt" beforeDir="false" afterPath="$PROJECT_DIR$/PDF-URLs-List/PDF-URLs-List-2020-first.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyDFScraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyDFScraper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkingMemory/currentFile.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/WorkingMemory/currentFile.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +186,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -268,7 +275,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\msi\AppData\Local\Programs\Python\Python38\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -556,7 +563,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646052530244</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Data lost&#10;This is the restoration of what is left&#10;&#10;added possible additional searchterms in PyDFScraper.py">
+      <created>1646126715100</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1646126715100</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TodoView">
@@ -694,18 +708,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/DataAnalyzer.py</url>
-          <line>244</line>
-          <option name="timeStamp" value="141" />
+          <line>32</line>
+          <option name="timeStamp" value="169" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/DataAnalyzer.py</url>
-          <line>234</line>
-          <option name="timeStamp" value="148" />
+          <line>33</line>
+          <option name="timeStamp" value="170" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/DataAnalyzer.py</url>
-          <line>235</line>
-          <option name="timeStamp" value="153" />
+          <line>105</line>
+          <option name="timeStamp" value="171" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/DataAnalyzer.py</url>
+          <line>26</line>
+          <option name="timeStamp" value="172" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
