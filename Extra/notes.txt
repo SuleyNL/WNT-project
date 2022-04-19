@@ -70,6 +70,7 @@ site:bestuur.*.nl
 site:raad.*.nl
 site:gemeenteraad.*.nl
 site:findo.nl
+site:ifv.nl
 
 "de " komt gemiddeld 20x voor per pagina
 'Geen resultaten' MET resultaten:
@@ -188,9 +189,9 @@ A C (d) E F(not Gegevens overschrijding or Gegevens per WNT-instelling) (g) (2) 
 Link to lots of data regarding different pdf scrapers:
 https://cementanswers.com/is-tabula-secure/
 
-lamp
-stoel
-noise cancelling headphone
-massagestoel
-bureau(?)
-korteafstand microfoon
+
+
+1079 Stichting erfgoed Gelderland heeft als eerste link 1078 enschedepromotie.nl
+1065 tot 1082 verwijderd - verkeerd opgevuld
+1074 bleek dubbel te zijn, alles onder 1074 1 plek omhoog verplaatst in pdf-urls-list
+1071 tot 1081 verwijderd

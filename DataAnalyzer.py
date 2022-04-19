@@ -10,9 +10,7 @@ from pdfminer.pdfpage import PDFPage
 from reportlab.pdfgen.canvas import Canvas
 from collections import Counter
 from enum import Enum
-from distutils import dir_util
 import shutil
-
 
 from Categories import *
 
@@ -48,12 +46,14 @@ def createRapport(year, isFirst=True):
     print()
 
     print("Schatting ratio Wel/Geen WNT")
-    print(str(calculatePercentage(welWNTpercentage, welWNTpercentage + geenWNTpercentage)) + "%" + " / " + str(calculatePercentage(geenWNTpercentage, welWNTpercentage + geenWNTpercentage)) + "%")
-    print(str(round(calculatePercentage(welWNTpercentage, welWNTpercentage + geenWNTpercentage))) + " / " + str(round(calculatePercentage(geenWNTpercentage, welWNTpercentage + geenWNTpercentage))))
+    print(str(calculatePercentage(welWNTpercentage, welWNTpercentage + geenWNTpercentage)) + "%" + " / " + str(
+        calculatePercentage(geenWNTpercentage, welWNTpercentage + geenWNTpercentage)) + "%")
+    print(str(round(calculatePercentage(welWNTpercentage, welWNTpercentage + geenWNTpercentage))) + " / " + str(
+        round(calculatePercentage(geenWNTpercentage, welWNTpercentage + geenWNTpercentage))))
 
-    #print(categories[2].name)
+    # print(categories[2].name)
 
-    #print(categories.get_category_by_id(7).name)
+    # print(categories.get_category_by_id(7).name)
     '''
     # print()
     print(totalOrganisations)
@@ -61,7 +61,7 @@ def createRapport(year, isFirst=True):
 
     print(categories[Categories.encryption.value].amount)
     '''
-    #movePdfs(year)
+    movePdfs(year)
 
     return "------[THE END]------"
 
@@ -124,9 +124,9 @@ def categorise():
         matrix = searchData[0]
         categories.set_data(searchData[0], searchData[1], searchData[2], searchData[3], i)
 
-        #categories[i].matrix = searchData[1]
-        #categories[i].amount = searchData[2]
-        #categories[i].organisations = searchData[3]
+        # categories[i].matrix = searchData[1]
+        # categories[i].amount = searchData[2]
+        # categories[i].organisations = searchData[3]
         i += 1
 
 
@@ -176,7 +176,7 @@ def matrixAtLeastOne(filledMatrix: list, searchTerm: str):
                 searchTermCount += 1
                 #: Increment total found searches on this searchTerm
         i += 1
-    print(str(searchTermCount) +" organisaties zijn " + searchTerm)
+    print(str(searchTermCount) + " organisaties zijn " + searchTerm)
     print()
     return filledMatrix, UniqueMatrix, searchTermCount, UniqueOrganisationsList
 
@@ -192,7 +192,7 @@ def getPDFsList():
     global path
     PDFsList = []
     Path(path).mkdir(parents=True, exist_ok=True)
-    organisations = [f.path for f in os.scandir(path)] #fastest way to get all items in directory: 1ms vs 18+ms
+    organisations = [f.path for f in os.scandir(path)]  # fastest way to get all items in directory: 1ms vs 18+ms
     for organisation in organisations:
         for pdf in os.listdir(organisation):
             PDFsList.append(pdf)
@@ -219,8 +219,8 @@ def getOrganisationsList(year):
     Path(path).mkdir(parents=True, exist_ok=True)
 
     for organisation in os.listdir(path):
-            organisationCounter += 1
-            organisationsList.append(organisation)
+        organisationCounter += 1
+        organisationsList.append(organisation)
 
     return organisationsList
 
@@ -235,13 +235,13 @@ def movePdfs(year):
             if organisation != "0098 - Divosa, de landelijke vereniging van leidinggevenden van gemeentelijke diensten op het terrein van werk, inkomen en zorg" and organisation != "1620 - Stichting Verdeling Financiële Overheidsbijdragen in het Werk van de Centrales van Overheids- en Onderwijspersoneel":
                 originalPath = path + "{0}".format(organisation)
                 newPath = "PDFs/{0}/Categories/{1}/{2}/".format(year, category.name, organisation)
-                #Path(newPath).mkdir(parents=True, exist_ok=True)
+                # Path(newPath).mkdir(parents=True, exist_ok=True)
                 #: Move the entire organisation map to the new location
                 shutil.copytree(originalPath, newPath)
 
 
 def standardizeIDs(path: str):
-    organisations = [f.path for f in os.scandir(path)] #fastest way to get all items in directory: 1ms vs 18ms
+    organisations = [f.path for f in os.scandir(path)]  # fastest way to get all items in directory: 1ms vs 18ms
     for organisation in organisations:
         organisation = organisation.split('/')[-1]
 
@@ -262,27 +262,35 @@ def standardizeIDs(path: str):
         os.renames(organisation, newName)
 
 
-#def generatePdf():
-
 def howManyLinesFilled(filename):
     totalLines = 0
     linesFilled = 0
     with open(filename) as file:
         lines = file.readlines()
     for line in lines:
-        totalLines +=1
+        totalLines += 1
         line = line.strip().split(": ")
         if len(line) > 1:
-            linesFilled +=1
+            linesFilled += 1
     return calculatePercentage(linesFilled, totalLines)
 
 
+def turnDirectoryIntoCSV(directory: str):
+    organisations = [f.path.split(" - ")[2] for f in os.scandir(directory) if ".csv" not in f.path]
+                    #[f.path.split(" - ")[2] if ".csv" not in f else pass for f in os.scandir(directory)]
+    g = open(directory + "/DirectoryInCSV.csv", "w+")
+    for org in organisations:
+        g.write(org + "; \n")
+        print(org)
+    g.close()
+
+
 if __name__ == '__main__':
-    #print(howManyLinesFilled("PDF-URLs-List/PDF-URLs-List-2020-first.txt"))
-    #print(howManyLinesFilled("Organisations-URLs-List/Organisation-URLs-List-2020-Almanak.txt"))
-    #print(howManyLinesFilled("Organisations-URLs-List/Organisation-URLs-List-2020-drimble.txt"))
-    #print(howManyLinesFilled("Organisations-URLs-List/Organisation-URLs-List-2020-Combined.txt"))
+    # print(howManyLinesFilled("PDF-URLs-List/PDF-URLs-List-2020-first.txt"))
+    # print(howManyLinesFilled("Organisations-URLs-List/Organisation-URLs-List-2020-Almanak.txt"))
+    # print(howManyLinesFilled("Organisations-URLs-List/Organisation-URLs-List-2020-drimble.txt"))
+    # print(howManyLinesFilled("Organisations-URLs-List/Organisation-URLs-List-2020-Combined.txt"))
 
-    print(createRapport(2020, False))
+    turnDirectoryIntoCSV("PDFs/2020/Categories 15-4-2022/Geen WNT - Geen zoekresultaten")
 
-    #print(len(os.listdir("PDFs/2020/Categories 11-11-2021/Wel WNT")))
+    #print(createRapport(2020, False))

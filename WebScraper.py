@@ -6,6 +6,8 @@ from googlesearch import search
 import requests
 from datetime import datetime, timedelta
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+
 from math import floor
 import Extra
 from lxml import html
@@ -24,7 +26,7 @@ def downloadWNTList():
     organisationList = []
 
     # start web browser
-    browser = webdriver.Chrome()
+    browser = webdriver.Chrome(ChromeDriverManager().install())
 
     # get source code
     browser.get("https://www.topinkomens.nl/voor-wnt-instellingen/wnt-register")
@@ -441,5 +443,6 @@ def storePdfURLsfromOrg(year: int):
 if __name__ == "__main__":
     #startProcess(2020)
     #getOrgUrls(2020)
+    downloadWNTList()
     storePdfURLsfromOrg(2020)
 

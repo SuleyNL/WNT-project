@@ -465,12 +465,13 @@ def getPageNumber():
             realWordScore += sum((itm.lower().count("de") for itm in page))
             highscore = 0
             currentScore = sum((itm.lower().count("bezoldiging") for itm in page)) + \
-                            sum((itm.lower().count("topfunctionaris") for itm in page)) + \
-                           sum((itm.lower().count("topfunctionarissen") for itm in page)) + \
                            sum((itm.lower().count("bezoldigingsmaximum") for itm in page)) + \
                            sum((itm.lower().count("onbezoldigd") for itm in page)) + \
+                           sum((itm.lower().count("onbezoldigde") for itm in page)) + \
+                           sum((itm.lower().count("topfunctionaris") for itm in page)) + \
+                           sum((itm.lower().count("topfunctionarissen") for itm in page)) + \
                            sum((itm.lower().count("deeltijdfactor") for itm in page)) + \
-                           sum((itm.lower().count("functiegegeve ns") for itm in page))
+                           sum((itm.lower().count("functiegegevens") for itm in page))
             # Possible other searchterms that could be added:
             # WNT-gegevens, dienstbetrekking, deeltijdfactor, normbedrag, WNT-instelling
             totalScore.append(currentScore)
@@ -491,6 +492,8 @@ def getPageNumber():
     # if there are no results for searchterm, report an error
     elif sum(totalScore) < 1:
         errorhandler(Error.noresultsError)
+    # if there are too few results for searchterm, report few results
+    # ## this is seperate and independent from realwordscore ##
     elif sum(totalScore) < 4:
         errorhandler(Error.fewresultsError)
     else:

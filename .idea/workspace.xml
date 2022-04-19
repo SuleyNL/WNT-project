@@ -9,14 +9,13 @@
     <bookmark url="file://$PROJECT_DIR$/DataAnalyzer.py" description="organisations = [f.path for f in os.scandir('PDFs/..." line="194" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3dce6a07-cb06-47fb-9940-96d715e77ab7" name="Default Changelist" comment="Data lost&#10;This is the restoration of what is left&#10;&#10;added possible additional searchterms in PyDFScraper.py">
-      <change beforePath="$PROJECT_DIR$/.idea/WNT-Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WNT-Project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="3dce6a07-cb06-47fb-9940-96d715e77ab7" name="Default Changelist" comment="new searchterms added for more accurate searching within pdf's. No more 'WNT' = no more accountantsverklaringen&#10;&#10;Data retrieved">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataAnalyzer.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataAnalyzer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Extra/notes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Extra/notes.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PDF-URLs-List/PDF-URLs-List-2020-first.txt" beforeDir="false" afterPath="$PROJECT_DIR$/PDF-URLs-List/PDF-URLs-List-2020-first.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PDF-URLs-List/PDF-URLs-List-2020.txt" beforeDir="false" afterPath="$PROJECT_DIR$/PDF-URLs-List/PDF-URLs-List-2020.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PyDFScraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyDFScraper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebScraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/WebScraper.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WorkingMemory/currentFile.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/WorkingMemory/currentFile.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -185,16 +184,16 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/PDFs/2020" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\School\Stage\WNT-Project - kopie (2)\PDFs\2020" />
       <recent name="D:\School\Stage\Ministerie Binnenlandse Zaken\WNT-Project\PDFs\2020" />
       <recent name="D:\School\Stage\Ministerie Binnenlandse Zaken\WNT-Project" />
       <recent name="D:\School\Stage\Ministerie Binnenlandse Zaken\WNT-Project\Extra\poppler-21.12.0" />
       <recent name="D:\School\Stage\Ministerie Binnenlandse Zaken\WNT-Project\PDFs" />
-      <recent name="D:\School\Stage\WNT-Project" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\School\Stage\Ministerie Binnenlandse Zaken\WNT-Project\Extra" />
@@ -334,10 +333,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.DataAnalyzer" />
+        <item itemvalue="Python.WebScraper" />
         <item itemvalue="Python.PyDFScraper" />
         <item itemvalue="Python.PdfDataMiner" />
         <item itemvalue="Python.All_code_compressed" />
-        <item itemvalue="Python.WebScraper" />
       </list>
     </recent_temporary>
   </component>
@@ -570,7 +569,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646126715100</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="new searchterms added for more accurate searching within pdf's. No more 'WNT' = no more accountantsverklaringen&#10;&#10;Data retrieved">
+      <created>1648025605534</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1648025605534</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TodoView">
@@ -656,7 +662,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added comments&#10;&#10;Program can now create new files if they do not exist&#10;&#10;Program can now automatically search for PDF's for the entire list, just give it the year&#10;&#10;Tested various methods for webscraping but still getting blocked by google&#10;TODO: webscraping method without getting blocked by google" />
     <MESSAGE value="Added automatic timer for 2.34 hours so scraping can take place in background&#10;&#10;Created system of categorising files&#10;&#10;Can now extract 4 pages out of necessary files&#10;&#10;Checks whether pdf contains searchterms, if not it creates noresults.pdf file&#10;&#10;Creates deadlink.pdf file if link is inaccessible&#10;&#10;5 types of errors now are getting tried and catched" />
     <MESSAGE value="entire commit has been deleted, this is what is left" />
     <MESSAGE value="GoogleScraper can now be ran in the background, scraped first batch" />
@@ -681,7 +686,8 @@
     <MESSAGE value="# Final pre-refactoring version" />
     <MESSAGE value="initialising refactor version" />
     <MESSAGE value="Data lost&#10;This is the restoration of what is left&#10;&#10;added possible additional searchterms in PyDFScraper.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="Data lost&#10;This is the restoration of what is left&#10;&#10;added possible additional searchterms in PyDFScraper.py" />
+    <MESSAGE value="new searchterms added for more accurate searching within pdf's. No more 'WNT' = no more accountantsverklaringen&#10;&#10;Data retrieved" />
+    <option name="LAST_COMMIT_MESSAGE" value="new searchterms added for more accurate searching within pdf's. No more 'WNT' = no more accountantsverklaringen&#10;&#10;Data retrieved" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -708,12 +714,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/DataAnalyzer.py</url>
-          <line>32</line>
+          <line>30</line>
           <option name="timeStamp" value="169" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/DataAnalyzer.py</url>
-          <line>33</line>
+          <line>31</line>
           <option name="timeStamp" value="170" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -723,8 +729,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/DataAnalyzer.py</url>
-          <line>26</line>
+          <line>24</line>
           <option name="timeStamp" value="172" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/WebScraper.py</url>
+          <line>43</line>
+          <option name="timeStamp" value="173" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/DataAnalyzer.py</url>
+          <line>278</line>
+          <option name="timeStamp" value="174" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/DataAnalyzer.py</url>
+          <line>280</line>
+          <option name="timeStamp" value="175" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
